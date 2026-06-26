@@ -11,7 +11,7 @@ export function Creators() {
   const c = t.creators;
 
   return (
-    <section id="creators" className="relative overflow-hidden bg-ink py-24 text-paper sm:py-32">
+    <section id="creators" className="relative overflow-hidden bg-ink py-20 text-paper sm:py-28">
       <div className="halftone pointer-events-none absolute inset-0 text-magenta opacity-10" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>

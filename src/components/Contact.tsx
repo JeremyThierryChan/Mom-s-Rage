@@ -59,7 +59,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative bg-magenta py-24 text-ink sm:py-32">
+    <section id="contact" className="relative bg-magenta py-20 text-ink sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left: pitch + channels */}

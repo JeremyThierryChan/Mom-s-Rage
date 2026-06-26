@@ -8,7 +8,7 @@ export function Partners() {
   const p = t.partners;
 
   return (
-    <section id="partners" className="relative overflow-hidden bg-electric py-24 text-paper sm:py-32">
+    <section id="partners" className="relative overflow-hidden bg-electric py-20 text-paper sm:py-28">
       <div className="halftone pointer-events-none absolute inset-0 text-ink opacity-10" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
@@ -16,11 +16,11 @@ export function Partners() {
           <h2 className="display-tight mt-4 max-w-4xl text-5xl sm:text-7xl">{p.title}</h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-8 max-w-2xl text-lg text-paper/85">{p.lead}</p>
+          <p className="mt-6 max-w-2xl text-base text-paper/85 sm:text-lg">{p.lead}</p>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="kicker mt-14 mb-5 text-paper/60">{p.traitsTitle}</p>
+          <p className="kicker mt-10 mb-4 text-paper/60">{p.traitsTitle}</p>
         </Reveal>
         <div className="flex flex-wrap gap-3">
           {p.traits.map((trait, i) => (

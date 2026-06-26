@@ -8,7 +8,7 @@ export function Story() {
   const s = t.story;
 
   return (
-    <section id="story" className="relative bg-paper py-24 sm:py-32">
+    <section id="story" className="relative bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <p className="kicker text-magenta">{s.kicker}</p>
@@ -16,12 +16,12 @@ export function Story() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mt-8 max-w-2xl border-l-4 border-magenta pl-5 text-2xl font-bold italic leading-snug sm:text-3xl">
+          <p className="mt-8 max-w-2xl border-l-4 border-magenta pl-5 text-xl font-bold italic leading-snug sm:text-2xl">
             {s.lead}
           </p>
         </Reveal>
 
-        <div className="mt-10 grid max-w-3xl gap-5 text-lg leading-relaxed text-ink/80">
+        <div className="mt-8 grid max-w-3xl gap-4 text-base leading-relaxed text-ink/80 sm:text-lg">
           {s.body.map((p, i) => (
             <Reveal key={i} delay={0.15 + i * 0.08}>
               <p>{p}</p>
@@ -31,7 +31,7 @@ export function Story() {
 
         {/* Three meanings */}
         <Reveal delay={0.1}>
-          <p className="kicker mt-20 mb-6 text-ink/60">{s.layersTitle}</p>
+          <p className="kicker mt-14 mb-5 text-ink/60">{s.layersTitle}</p>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">
           {s.layers.map((layer, i) => (

@@ -37,7 +37,7 @@ export function CreatorDetail({ id }: { id: string }) {
       <Nav subpage />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-ink pb-16 pt-28 text-paper sm:pb-20 sm:pt-32">
+        <section className="relative overflow-hidden bg-ink pb-12 pt-24 text-paper sm:pb-16 sm:pt-28">
           <div
             className="halftone pointer-events-none absolute inset-0 opacity-15"
             style={{ color: creator.accent }}

@@ -25,7 +25,7 @@ export function Works() {
   ];
 
   return (
-    <section id="works" className="relative bg-acid py-24 text-ink sm:py-32">
+    <section id="works" className="relative bg-acid py-20 text-ink sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <p className="kicker">{w.kicker}</p>
