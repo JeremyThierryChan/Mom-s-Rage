@@ -49,7 +49,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-8 max-w-2xl text-balance text-xl font-semibold leading-snug sm:text-2xl"
+          className="mt-8 max-w-2xl text-balance text-xl font-semibold leading-relaxed sm:text-2xl sm:leading-relaxed"
         >
           {t.hero.tagline}
         </motion.p>

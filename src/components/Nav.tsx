@@ -51,18 +51,18 @@ export function Nav({ subpage = false }: { subpage?: boolean }) {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {subpage ? (
-          <Link href="/" className="font-display text-2xl uppercase leading-none tracking-tight">
+          <Link href="/" className="font-display text-2xl uppercase leading-none tracking-tight lg:text-3xl">
             MOM&apos;S RAGE
-            <span className="font-brush ml-2 align-middle text-xl">妈见打</span>
+            <span className="font-brush ml-2 align-middle text-xl lg:text-2xl">妈见打</span>
           </Link>
         ) : (
           <a
             href="#top"
-            className="font-display text-2xl uppercase leading-none tracking-tight"
+            className="font-display text-2xl uppercase leading-none tracking-tight lg:text-3xl"
             onClick={close}
           >
             MOM&apos;S RAGE
-            <span className="font-brush ml-2 align-middle text-xl">妈见打</span>
+            <span className="font-brush ml-2 align-middle text-xl lg:text-2xl">妈见打</span>
           </a>
         )}
 
@@ -70,7 +70,7 @@ export function Nav({ subpage = false }: { subpage?: boolean }) {
         <ul className="hidden items-center gap-6 lg:flex">
           {links.map((l) => (
             <li key={l.id}>
-              {sectionLink(l.id, "kicker transition-opacity hover:opacity-60", l.label)}
+              {sectionLink(l.id, "font-mono text-sm uppercase tracking-widest transition-opacity hover:opacity-60", l.label)}
             </li>
           ))}
         </ul>
