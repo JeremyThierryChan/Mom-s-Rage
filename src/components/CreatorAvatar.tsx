@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { asset } from "@/lib/config";
 import type { Creator } from "@/data/creators";
 
 /**
@@ -25,7 +24,7 @@ export function CreatorAvatar({
     >
       {creator.avatar ? (
         <Image
-          src={asset(creator.avatar)}
+          src={creator.avatar}
           alt=""
           fill
           sizes="220px"

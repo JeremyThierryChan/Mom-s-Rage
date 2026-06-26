@@ -30,6 +30,7 @@ import { creator as hunhun,   works as hunhunWorks   } from "./hunhun";
 import { creator as xiaobai,  works as xiaobaiWorks  } from "./xiaobai";
 import { creator as dianying, works as dianyingWorks } from "./dianying";
 import { creator as lengdan,  works as lengdanWorks  } from "./lengdan";
+import { creator as juanjuan, works as juanjuanWorks } from "./juanjuan";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -45,6 +46,7 @@ import HunhunPage   from "./hunhun/page";
 import XiaobaiPage  from "./xiaobai/page";
 import DianyingPage from "./dianying/page";
 import LengdanPage  from "./lengdan/page";
+import JuanjuanPage from "./juanjuan/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -57,6 +59,7 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   xiaobai:  XiaobaiPage,  // Risograph / 孔版印刷
   dianying: DianyingPage, // Film Strip / 胶片档案
   lengdan:  LengdanPage,  // Terminal / 终端输出
+  juanjuan: JuanjuanPage, // Monolith Portrait / 黑色纪念碑·真人版
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -71,6 +74,7 @@ export const creators: Creator[] = [
   xiaobai,
   dianying,
   lengdan,
+  juanjuan,
 ];
 
 export const works: Work[] = [
@@ -84,6 +88,7 @@ export const works: Work[] = [
   ...xiaobaiWorks,
   ...dianyingWorks,
   ...lengdanWorks,
+  ...juanjuanWorks,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];

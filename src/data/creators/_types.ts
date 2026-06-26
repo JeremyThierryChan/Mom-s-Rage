@@ -16,6 +16,8 @@ export type Work = {
   image?: string;
 };
 
+import type { StaticImageData } from "next/image";
+
 export type Creator = {
   id: string;
   name: { zh: string; en: string };
@@ -24,5 +26,5 @@ export type Creator = {
   bio: { zh: string; en: string };
   accent: string;
   glyph: string;
-  avatar?: string;
+  avatar?: StaticImageData;
 };
