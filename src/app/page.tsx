@@ -6,6 +6,7 @@ import { Soul } from "@/components/Soul";
 import { Works } from "@/components/Works";
 import { Process } from "@/components/Process";
 import { Partners } from "@/components/Partners";
+import { Creators } from "@/components/Creators";
 import { Promises } from "@/components/Promises";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -22,6 +23,7 @@ export default function Home() {
         <Works />
         <Process />
         <Partners />
+        <Creators />
         <Promises />
         <Contact />
       </main>

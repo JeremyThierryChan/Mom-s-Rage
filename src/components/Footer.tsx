@@ -40,9 +40,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-paper/15 pt-6 font-mono text-xs text-paper/45 sm:flex-row sm:justify-between">
-          <span>© {year} Mom&apos;s Rage 妈见打</span>
-          <span>{f.rights}</span>
+        <div className="mt-14 border-t border-paper/15 pt-6 font-mono text-xs text-paper/45">
+          <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+            <span>© {year} Mom&apos;s Rage 妈见打</span>
+            <span>{f.rights}</span>
+          </div>
+          <div className="mt-3 flex flex-col gap-1 border-t border-paper/10 pt-3 text-paper/30 sm:flex-row sm:gap-4">
+            <span>网站作者：杰蒂陈</span>
+            <span>微信：JeremyThierryChan</span>
+            <span>抖音：杰蒂陈（JeremyTC）</span>
+          </div>
         </div>
       </div>
     </footer>

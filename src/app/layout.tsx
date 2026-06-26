@@ -45,11 +45,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="zh-CN" className={`${anton.variable} ${grotesk.variable} ${mono.variable}`}>
       <head>
-        {/* Brush calligraphy for decorative Chinese — subset to only the glyphs we use */}
+        {/* Brush calligraphy for decorative Chinese — subset to only the glyphs we use.
+            Add any new brush glyph (work / creator) to this &text= list. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E5%A6%88%E8%A7%81%E6%89%93%E7%81%B5%E9%AD%82%E5%8F%91%E5%A3%B0%E8%89%BA%E6%9C%AF%E6%97%A0%E7%95%8C%E5%B0%8F%E4%BC%97%E4%B8%8D%E5%8F%9B%E9%80%86%E7%81%AD%E7%9C%9F%E6%9C%89%E6%84%8F%E6%80%9D&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=妈见打灵魂发声艺术无界小众不叛逆灭真有意思壹贰叁怒闷喷倔拙乱趣贴装杂狂泥反怪&display=swap"
           rel="stylesheet"
         />
       </head>

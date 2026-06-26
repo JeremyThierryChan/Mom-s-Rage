@@ -4,13 +4,13 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLang } from "@/lib/i18n";
 import { works, categoryOrder, type WorkCategory } from "@/data/works";
-import { WorkArt } from "./WorkArt";
+import { WorkCard } from "./WorkCard";
 import { Reveal } from "./Reveal";
 
 type Filter = "all" | WorkCategory;
 
 export function Works() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
   const w = t.works;
   const [filter, setFilter] = useState<Filter>("all");
 
@@ -52,32 +52,16 @@ export function Works() {
         <motion.div layout className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((work) => (
-              <motion.article
+              <motion.div
                 key={work.id}
                 layout
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.92 }}
                 transition={{ duration: 0.3 }}
-                className="group flex flex-col border-2 border-ink bg-paper shadow-hard transition-transform hover:-translate-y-1"
               >
-                <div className="overflow-hidden border-b-2 border-ink">
-                  <div className="transition-transform duration-500 group-hover:scale-105">
-                    <WorkArt work={work} />
-                  </div>
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <span className="kicker text-magenta">{w.categories[work.category]}</span>
-                  <h3 className="font-display mt-2 text-2xl uppercase leading-tight">
-                    {work.name[lang]}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm text-ink/70">{work.tagline[lang]}</p>
-                  <div className="mt-4 flex items-baseline gap-2">
-                    <span className="kicker text-ink/50">{w.priceFrom}</span>
-                    <span className="font-display text-2xl">¥{work.price}</span>
-                  </div>
-                </div>
-              </motion.article>
+                <WorkCard work={work} showCreator />
+              </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
