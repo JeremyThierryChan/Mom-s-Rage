@@ -1,0 +1,437 @@
+/**
+ * Bilingual site copy. `zh` is the source-of-truth shape; `en` must match it.
+ * Keeping all strings here means a future CMS / API can replace this module
+ * without touching components.
+ */
+
+const zh = {
+  meta: {
+    title: "妈见打 Mom's Rage — 多元艺术融合品牌",
+    description:
+      "妈见打 Mom's Rage 是一个多元艺术融合品牌。让不敢表达的人敢表达，让敢表达的人有地方表达。灵魂只有一个字：真。",
+  },
+  nav: {
+    story: "故事",
+    why: "为什么",
+    soul: "灵魂",
+    works: "作品",
+    process: "怎么做",
+    partners: "合伙人",
+    contact: "联系",
+    submitIdea: "说出你的想法",
+    switchLang: "EN",
+  },
+  hero: {
+    kicker: "多元艺术融合品牌 / MULTI-ART BRAND",
+    brandCn: "妈见打",
+    brandEn: "MOM'S RAGE",
+    tagline: "让不敢表达的人敢表达，让敢表达的人有地方表达。",
+    subline: "不讨好 · 不迎合 · 不规矩。只做你心里真实长出来的东西。",
+    soulLabel: "灵魂只有一个字",
+    soulWord: "真",
+    ctaWorks: "看作品",
+    ctaIdea: "说出你的想法",
+    scroll: "往下滚 · SCROLL",
+  },
+  marquee: [
+    "妈见打",
+    "灵魂发声",
+    "有意思",
+    "小众不小声",
+    "艺术不被定义",
+    "MOM'S RAGE",
+    "REAL",
+  ],
+  story: {
+    kicker: "01 — 品牌故事",
+    title: "为什么叫「妈见打」",
+    lead: "“再见一次，打一次。” 但她从来没停下来过。",
+    body: [
+      "创始人从小喜欢搞艺术，喜欢穿风格强烈的衣服，戴有个性的饰品。可家里只看重成绩，中学老师反对，高中老师反对，成年以后还是被限制。每次穿上喜欢的衣服会被骂，戴上喜欢的饰品也会被骂。",
+      "即便这样，她也没有变成听话的大人——而是把那份愤怒，变成了作品，变成了这个品牌。",
+    ],
+    layersTitle: "三层意思",
+    layers: [
+      {
+        num: "壹",
+        title: "决心",
+        body: "就算妈妈打，也要追求艺术。没什么拦得住。",
+      },
+      {
+        num: "贰",
+        title: "初心",
+        body: "我们做的就是那种「妈妈知道会打人」的小众艺术。不乖、不讨好、不迎合标准答案。",
+      },
+      {
+        num: "叁",
+        title: "愤怒",
+        body: "Mom's Rage——那个永远在反抗、永远坚持做自己的孩子长大了。她把愤怒变成了创造。",
+      },
+    ],
+  },
+  why: {
+    kicker: "02 — 为什么要有这个品牌",
+    title: "想象力，正在被磨平",
+    lead: "不是天生没有。是被标准答案磨平，被「听话」磨平，被无数句「别搞那些没用的」磨平。",
+    personasTitle: "我们看见两种人",
+    personas: [
+      {
+        tag: "TYPE A",
+        title: "心里有，但拿不出来",
+        age: "18–30 岁",
+        body: "生活按部就班，不开心、不自由、不敢做自己。心里其实有东西，但像被什么堵住了，出不来。",
+        gives: "我们给的是：在无趣的生活里，一次叛逆的机会。让你感觉自己还活着，还有血有肉。",
+      },
+      {
+        tag: "TYPE B",
+        title: "想法太多，缺一个出口",
+        age: "18–30 岁",
+        body: "生活方式自由，随时都在表达。但情绪和想法是喷涌状态的，需要一个真正的出口，需要被看见、被共鸣。",
+        gives: "我们给的是：让喷涌的情绪和想法，变成真实的、能拿在手里的作品。",
+      },
+    ],
+    angerTitle: "最让我们愤怒的一句话",
+    angerQuote: "“不行，这个太小众了，没人喜欢。”",
+    angerBody:
+      "主流艺术品牌太商业，不注重灵魂表达；真正有创意的独立作品又被打成小众，得不到推广。我们想打破这道壁垒——让每一种表达，都有它该有的位置。",
+  },
+  soul: {
+    kicker: "03 — 品牌的灵魂",
+    title: "唤醒被日常磨平的创造力",
+    mission:
+      "我们想成为开创艺术品领域的先锋，也想做那个长期推广小众文化的人——一直推下去，不是一阵风。",
+    principles: [
+      {
+        cn: "灵魂发声",
+        en: "SOUL FIRST",
+        body: "不迎合、不套路。每一件作品都要看得出创作者的痕迹，哪怕那个痕迹是笨拙的。",
+      },
+      {
+        cn: "艺术无界",
+        en: "NO BORDERS",
+        body: "打破形式壁垒。绘画、泥塑、IP、服装、装置、声音——所有艺术形式在一起碰撞。",
+      },
+      {
+        cn: "小众不小",
+        en: "NICHE ≠ SMALL",
+        body: "不因为小众就觉得羞耻。每一种真心表达，都值得被看见、被传播。",
+      },
+      {
+        cn: "叛逆不灭",
+        en: "STAY DEFIANT",
+        body: "就算被反对，也要坚持自己觉得对的事。这是品牌从出生就带着的基因。",
+      },
+    ],
+    soulLead: "如果只能用一个词概括这个品牌的灵魂——",
+    soulWord: "真",
+    soulTail: "真实的表达，真实的情绪，真实的自己。没有滤镜。",
+  },
+  works: {
+    kicker: "04 — 作品",
+    title: "你心里长出来的东西",
+    lead: "别人卖的是好看的东西。我们卖的是你心里真实长出来的东西。价格从 ¥10 到 ¥200，门槛可以低，但灵魂不低。",
+    filterAll: "全部",
+    categories: {
+      ip: "原创 IP",
+      clay: "泥塑",
+      apparel: "服装",
+      goods: "周边",
+    },
+    priceFrom: "起",
+    placeholderNote: "作品视觉为占位演示 — 把真实图片放进 /public/works/ 即可替换。",
+  },
+  process: {
+    kicker: "05 — 怎么做",
+    title: "从一个离谱的想法，到属于你的东西",
+    steps: [
+      {
+        num: "01",
+        title: "大胆说出你的想法",
+        body: "无论多离谱都可以。越离谱，我们越兴奋。",
+      },
+      {
+        num: "02",
+        title: "和你一起落地",
+        body: "设计师和艺术家跟你一起，把脑子里的东西变成真实的、摸得到的作品。",
+      },
+      {
+        num: "03",
+        title: "拿到只属于你的那件",
+        body: "可能是一幅画、一只玩偶、一个你每天都用的杯子。重要的是——它是为你长出来的。",
+      },
+    ],
+  },
+  partners: {
+    kicker: "06 — 同频艺术合伙人",
+    title: "我们不找技法最娴熟的人",
+    lead: "公开邀请制。我们找的是真心热爱艺术、想发展个人风格、不迎合不套路、灵魂自由、人格独立的人。",
+    traitsTitle: "共同特质",
+    traits: ["热爱元艺术", "人格独立", "灵魂自由", "比一般人更开朗一点", "愿意和人碰撞想法"],
+    cta: "成为合伙人",
+  },
+  promises: {
+    kicker: "07 — 我们承诺",
+    title: "我们承诺什么",
+    items: [
+      "每一件作品都有创作者的灵魂痕迹，不做流水线产品。",
+      "不因为小众就退缩——你不敢做的表达，我们来做。",
+      "价格不设高门槛，¥10 也能买到真正的创意。",
+      "永远欢迎离谱的想法，越离谱我们越兴奋。",
+      "不做讨好所有人的品牌，只做和同频的人共振的品牌。",
+    ],
+  },
+  contact: {
+    kicker: "08 — 说出你的想法",
+    title: "大胆说出来，无论多离谱",
+    lead: "这是接触我们的第一步。把你脑子里那个最离谱的想法丢过来。",
+    channelsTitle: "找到我们",
+    channels: [
+      { label: "小红书", value: "@妈见打 MomsRage", href: "#" },
+      { label: "微信", value: "MomsRage_official", href: "#" },
+      { label: "邮箱", value: "hi@momsrage.art", href: "mailto:hi@momsrage.art" },
+    ],
+    form: {
+      nameLabel: "怎么称呼你",
+      namePlaceholder: "你的名字 / 昵称",
+      contactLabel: "怎么找到你",
+      contactPlaceholder: "微信 / 邮箱 / 小红书",
+      ideaLabel: "你的想法",
+      ideaPlaceholder: "越离谱越好。一幅画？一只怪物？一件没人敢穿的衣服？",
+      submit: "丢给我们",
+      submitting: "发送中…",
+      successTitle: "收到了！",
+      success: "我们最喜欢离谱的想法。会尽快回复你。",
+      again: "再丢一个",
+      errorRequired: "想法不能为空 — 这是重点。",
+    },
+  },
+  footer: {
+    tagline: "那个让不敢表达的人，敢表达的牌子。",
+    soulLabel: "灵魂",
+    soulWord: "真",
+    keywords: ["妈见打", "灵魂发声", "有意思", "小众不小声", "艺术不被定义"],
+    rights: "保留所有真心。",
+    backToTop: "回到顶部",
+  },
+};
+
+export type Dict = typeof zh;
+
+const en: Dict = {
+  meta: {
+    title: "Mom's Rage 妈见打 — Multi-Art Brand",
+    description:
+      "Mom's Rage is a multi-disciplinary art brand. For those too afraid to express — and those bursting to. The soul is one word: REAL.",
+  },
+  nav: {
+    story: "Story",
+    why: "Why",
+    soul: "Soul",
+    works: "Works",
+    process: "Process",
+    partners: "Partners",
+    contact: "Contact",
+    submitIdea: "Drop your idea",
+    switchLang: "中",
+  },
+  hero: {
+    kicker: "MULTI-ART BRAND / 多元艺术融合品牌",
+    brandCn: "妈见打",
+    brandEn: "MOM'S RAGE",
+    tagline: "For those too afraid to express — and those bursting to.",
+    subline: "No pleasing. No pandering. No rules. Only what truly grows from inside you.",
+    soulLabel: "The soul is one word",
+    soulWord: "真",
+    ctaWorks: "See the works",
+    ctaIdea: "Drop your idea",
+    scroll: "SCROLL · 往下滚",
+  },
+  marquee: [
+    "MOM'S RAGE",
+    "SOUL FIRST",
+    "INTERESTING",
+    "NICHE, NOT QUIET",
+    "ART, UNDEFINED",
+    "妈见打",
+    "REAL",
+  ],
+  story: {
+    kicker: "01 — The Story",
+    title: "Why “Mom's Rage”",
+    lead: "“Wear it again and you'll get it again.” She never stopped.",
+    body: [
+      "The founder loved art from a young age — bold clothes, statement accessories. But home only valued grades. Teachers in middle school said no. High school said no. Even as an adult, she was held back. Every time she wore what she loved, she got yelled at. Every accessory, a fight.",
+      "And still — she never became the obedient adult. She turned that rage into work, and the work into this brand.",
+    ],
+    layersTitle: "Three meanings",
+    layers: [
+      {
+        num: "I",
+        title: "Resolve",
+        body: "Even if Mom hits — chase the art anyway. Nothing can stop it.",
+      },
+      {
+        num: "II",
+        title: "Intent",
+        body: "We make exactly the kind of niche art Mom would smack you for. Not obedient, not pleasing, not the standard answer.",
+      },
+      {
+        num: "III",
+        title: "Rage",
+        body: "Mom's Rage — the kid who always rebelled, always stayed herself, grew up. She turned the anger into creation.",
+      },
+    ],
+  },
+  why: {
+    kicker: "02 — Why we exist",
+    title: "Imagination, being sanded down",
+    lead: "Not born without it. Sanded down by standard answers, by “be obedient,” by a thousand “stop wasting your time.”",
+    personasTitle: "We see two kinds of people",
+    personas: [
+      {
+        tag: "TYPE A",
+        title: "It's inside — it just won't come out",
+        age: "Ages 18–30",
+        body: "Life on autopilot. Unhappy, unfree, afraid to be themselves. There's something inside, but it's stuck, like something's blocking it.",
+        gives: "We give: one chance to rebel inside a dull life. To feel alive again — flesh and blood.",
+      },
+      {
+        tag: "TYPE B",
+        title: "Too many ideas, no outlet",
+        age: "Ages 18–30",
+        body: "Free, always expressing. But the feelings and ideas come gushing out — they need a real outlet, to be seen, to resonate.",
+        gives: "We give: a way to turn that flood of emotion and ideas into something real you can hold in your hand.",
+      },
+    ],
+    angerTitle: "The line that enrages us most",
+    angerQuote: "“No. Too niche. Nobody likes that.”",
+    angerBody:
+      "Mainstream art brands are too commercial, with no soul. Truly creative independent work gets branded “niche” and never reaches anyone. We want to break that wall — so every form of expression gets the place it deserves.",
+  },
+  soul: {
+    kicker: "03 — The Soul",
+    title: "Reawaken the creativity daily life sanded down",
+    mission:
+      "We want to pioneer the art-object space — and be the ones who keep pushing niche culture for the long haul. Not a passing gust.",
+    principles: [
+      {
+        cn: "灵魂发声",
+        en: "SOUL FIRST",
+        body: "No pandering, no formulas. Every piece must show the maker's fingerprint — even a clumsy one.",
+      },
+      {
+        cn: "艺术无界",
+        en: "NO BORDERS",
+        body: "Break the walls between forms. Painting, clay, IP, apparel, installation, sound — all colliding together.",
+      },
+      {
+        cn: "小众不小",
+        en: "NICHE ≠ SMALL",
+        body: "No shame in being niche. Every honest expression deserves to be seen and spread.",
+      },
+      {
+        cn: "叛逆不灭",
+        en: "STAY DEFIANT",
+        body: "Even when opposed, stand by what you believe is right. It's in the brand's DNA from birth.",
+      },
+    ],
+    soulLead: "If one word had to capture the brand's soul —",
+    soulWord: "真",
+    soulTail: "Real expression. Real emotion. Real you. No filter.",
+  },
+  works: {
+    kicker: "04 — Works",
+    title: "The thing that grows from inside you",
+    lead: "Others sell pretty things. We sell what truly grows from inside you. From ¥10 to ¥200 — the price can be low, the soul never is.",
+    filterAll: "All",
+    categories: {
+      ip: "Original IP",
+      clay: "Clay",
+      apparel: "Apparel",
+      goods: "Goods",
+    },
+    priceFrom: "from",
+    placeholderNote: "Visuals are placeholders — drop real images into /public/works/ to replace.",
+  },
+  process: {
+    kicker: "05 — Process",
+    title: "From a ridiculous idea to something that's yours",
+    steps: [
+      {
+        num: "01",
+        title: "Say your idea out loud",
+        body: "However ridiculous. The more ridiculous, the more excited we get.",
+      },
+      {
+        num: "02",
+        title: "We build it with you",
+        body: "Designers and artists work with you to turn what's in your head into something real you can touch.",
+      },
+      {
+        num: "03",
+        title: "Get the one that's only yours",
+        body: "Maybe a painting, a doll, a cup you use every day. What matters: it grew for you.",
+      },
+    ],
+  },
+  partners: {
+    kicker: "06 — Aligned art partners",
+    title: "We don't look for the most skilled",
+    lead: "Open invitation. We look for people who truly love art, want their own style, refuse to pander, with a free soul and an independent mind.",
+    traitsTitle: "Shared traits",
+    traits: [
+      "Love meta-art",
+      "Independent mind",
+      "Free soul",
+      "A little more open than most",
+      "Up for clashing ideas",
+    ],
+    cta: "Become a partner",
+  },
+  promises: {
+    kicker: "07 — Our promises",
+    title: "What we promise",
+    items: [
+      "Every piece carries the maker's soul. No assembly-line products.",
+      "We won't back down for being niche — the expression you're afraid of, we'll make.",
+      "No high price barrier. ¥10 can still buy real creativity.",
+      "Ridiculous ideas always welcome. The wilder, the better.",
+      "We won't be a brand for everyone — only one that resonates with the aligned.",
+    ],
+  },
+  contact: {
+    kicker: "08 — Drop your idea",
+    title: "Say it out loud, however ridiculous",
+    lead: "This is the first step to reaching us. Throw us the most ridiculous idea in your head.",
+    channelsTitle: "Find us",
+    channels: [
+      { label: "RED / 小红书", value: "@妈见打 MomsRage", href: "#" },
+      { label: "WeChat", value: "MomsRage_official", href: "#" },
+      { label: "Email", value: "hi@momsrage.art", href: "mailto:hi@momsrage.art" },
+    ],
+    form: {
+      nameLabel: "What do we call you",
+      namePlaceholder: "Your name / nickname",
+      contactLabel: "How to reach you",
+      contactPlaceholder: "WeChat / email / RED",
+      ideaLabel: "Your idea",
+      ideaPlaceholder: "The wilder the better. A painting? A monster? Clothes nobody dares to wear?",
+      submit: "Throw it at us",
+      submitting: "Sending…",
+      successTitle: "Got it!",
+      success: "Ridiculous ideas are our favorite. We'll get back to you soon.",
+      again: "Throw another",
+      errorRequired: "The idea can't be empty — that's the whole point.",
+    },
+  },
+  footer: {
+    tagline: "The brand that makes the silenced speak.",
+    soulLabel: "Soul",
+    soulWord: "真",
+    keywords: ["MOM'S RAGE", "SOUL FIRST", "INTERESTING", "NICHE NOT QUIET", "ART UNDEFINED"],
+    rights: "All sincerity reserved.",
+    backToTop: "Back to top",
+  },
+};
+
+export const content = { zh, en } as const;

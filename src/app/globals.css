@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — bold, clashing, underground-poster palette          */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-paper: #f3ede0;
+  --color-ink: #0c0a09;
+  --color-magenta: #ff2d8b;
+  --color-acid: #d7ff1e;
+  --color-electric: #2b2bff;
+  --color-orange: #ff5a1f;
+  --color-cyan: #19e3ff;
+  --color-blood: #ff1f3d;
+  --color-purple: #9b2dff;
+
+  --font-display: var(--font-anton), "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --font-sans: var(--font-grotesk), "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: var(--font-mono-sp), "PingFang SC", ui-monospace, monospace;
+  --font-brush: "Ma Shan Zheng", var(--font-anton), "PingFang SC", cursive;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-acid);
+  color: var(--color-ink);
+}
+
+/* Custom scrollbar — keeps the gritty vibe on desktop */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-magenta);
+  border: 3px solid var(--color-ink);
+}
+
+/* ------------------------------------------------------------------ */
+/* Type helpers                                                        */
+/* ------------------------------------------------------------------ */
+.font-brush {
+  font-family: var(--font-brush);
+  font-weight: 400;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.display-tight {
+  font-family: var(--font-display);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Outlined / stroked text */
+.text-stroke {
+  -webkit-text-stroke: 2px var(--color-ink);
+  color: transparent;
+}
+.text-stroke-paper {
+  -webkit-text-stroke: 2px var(--color-paper);
+  color: transparent;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------ */
+/* Grain / noise overlay                                               */
+/* ------------------------------------------------------------------ */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------ */
+/* Halftone / dotted texture                                           */
+/* ------------------------------------------------------------------ */
+.halftone {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.6px);
+  background-size: 10px 10px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Tape sticker accent                                                 */
+/* ------------------------------------------------------------------ */
+.tape {
+  position: relative;
+}
+.tape::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 84px;
+  height: 26px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(215, 255, 30, 0.55);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Hard offset shadow for that print/sticker pop */
+.shadow-hard {
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+.shadow-hard-sm {
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+/* ------------------------------------------------------------------ */
+/* Marquee                                                             */
+/* ------------------------------------------------------------------ */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+.marquee-reverse {
+  animation-direction: reverse;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Misc motion                                                         */
+/* ------------------------------------------------------------------ */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+.blink {
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.hover-wiggle:hover {
+  animation: wiggle 0.32s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .blink,
+  .float-y,
+  .hover-wiggle:hover {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
