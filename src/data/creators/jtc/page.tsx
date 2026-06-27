@@ -73,7 +73,7 @@ export default function EditorialPortraitPage({ id: _id }: { id: string }) {
               ← {c.backHome}
             </Link>
 
-            <h1 className="font-display text-6xl uppercase leading-none md:text-[5.5rem]">
+            <h1 className="font-display text-6xl leading-none md:text-[5.5rem]">
               {creator.name[lang]}
             </h1>
             <p className="mt-3 font-mono text-xs tracking-[0.3em] text-ink/50">

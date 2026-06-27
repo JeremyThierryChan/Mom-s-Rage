@@ -112,7 +112,7 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
                   {/* Name */}
                   <h1
                     className="display-tight leading-none text-paper"
-                    style={{ fontSize: "clamp(4rem, 12vw, 9rem)" }}
+                    style={{ fontSize: "clamp(4rem, 12vw, 9rem)", textTransform: "none" }}
                   >
                     {creator.name[lang]}
                   </h1>

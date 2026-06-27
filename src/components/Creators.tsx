@@ -46,7 +46,7 @@ export function Creators() {
                       />
                     </div>
                   </div>
-                  <h3 className="font-display mt-5 text-2xl uppercase leading-none transition-colors group-hover:text-acid">
+                  <h3 className="font-display mt-5 text-2xl leading-none transition-colors group-hover:text-acid">
                     {creator.name[lang]}
                   </h3>
                   <p className="mt-1 font-mono text-[0.7rem] tracking-wide text-paper/55">

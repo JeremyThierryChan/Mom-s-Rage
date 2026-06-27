@@ -32,6 +32,12 @@ import { creator as dianying, works as dianyingWorks } from "./dianying";
 import { creator as lengdan,  works as lengdanWorks  } from "./lengdan";
 import { creator as juanjuan, works as juanjuanWorks } from "./juanjuan";
 import { creator as jtc,      works as jtcWorks      } from "./jtc";
+import { creator as longgumu, works as longgumuWorks } from "./longgumu";
+import { creator as zach,       works as zachWorks       } from "./zach";
+import { creator as erraticvex, works as erraticvexWorks } from "./erraticvex";
+import { creator as cry1vloon,  works as cry1vloonWorks  } from "./cry1vloon";
+import { creator as vivi,       works as viviWorks       } from "./vivi";
+import { creator as s16_7,      works as s16_7Works      } from "./16_7";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -48,7 +54,13 @@ import XiaobaiPage  from "./xiaobai/page";
 import DianyingPage from "./dianying/page";
 import LengdanPage  from "./lengdan/page";
 import JuanjuanPage from "./juanjuan/page";
-import JtcPage      from "./jtc/page";
+import JtcPage        from "./jtc/page";
+import LonggumuPage   from "./longgumu/page";
+import ZachPage         from "./zach/page";
+import ErraticVexPage  from "./erraticvex/page";
+import Cry1vloOnPage   from "./cry1vloon/page";
+import ViviPage        from "./vivi/page";
+import SixteenSevenPage from "./16_7/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -63,6 +75,12 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   lengdan:  LengdanPage,  // Terminal / 终端输出
   juanjuan: JuanjuanPage, // Monolith Portrait / 黑色纪念碑·真人版
   jtc:      JtcPage,      // Editorial Portrait / 杂志双栏·真人版
+  longgumu: LonggumuPage, // Terminal Portrait / 终端输出·真人版
+  zach:       ZachPage,       // Editorial Portrait / 杂志双栏·真人版
+  erraticvex: ErraticVexPage, // Brutalist Portrait / 粗野宣言·真人版
+  cry1vloon:  Cry1vloOnPage,  // Film Strip Portrait / 胶片档案·真人版
+  vivi:       ViviPage,       // Risograph Portrait / 孔版印刷·真人版
+  "16_7":     SixteenSevenPage, // Zine Portrait / 地下拼贴·真人版
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -79,6 +97,12 @@ export const creators: Creator[] = [
   lengdan,
   juanjuan,
   jtc,
+  longgumu,
+  zach,
+  erraticvex,
+  cry1vloon,
+  vivi,
+  s16_7,
 ];
 
 export const works: Work[] = [
@@ -94,6 +118,12 @@ export const works: Work[] = [
   ...lengdanWorks,
   ...juanjuanWorks,
   ...jtcWorks,
+  ...longgumuWorks,
+  ...zachWorks,
+  ...erraticvexWorks,
+  ...cry1vloonWorks,
+  ...viviWorks,
+  ...s16_7Works,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];
