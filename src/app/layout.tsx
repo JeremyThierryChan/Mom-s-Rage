@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&text=妈见打灵魂发声艺术无界小众不叛逆灭真有意思壹贰叁怒闷喷倔拙乱趣贴装杂狂泥反怪嘟哭空混补改影帧卷冷废默白感光卷蓝妆盒字皮作网琴杰龙十六点七冷&display=swap"
+          href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&text=妈见打灵魂发声艺术无界小众不叛逆灭真有意思壹贰叁怒闷喷倔拙乱趣贴装杂狂泥反怪嘟哭空混补改影帧卷冷废默白感光卷蓝妆盒字皮作网琴杰龙十六点七冷屿&display=swap"
           rel="stylesheet"
         />
       </head>

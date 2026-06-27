@@ -76,7 +76,7 @@ export function Hero() {
             {t.hero.ctaWorks}
           </Link>
           <Link
-            href="/partners#contact"
+            href="/contact"
             className="border-2 border-paper px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-paper transition-colors hover:bg-paper hover:text-ink"
           >
             {t.hero.ctaIdea}

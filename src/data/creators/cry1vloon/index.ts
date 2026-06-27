@@ -47,4 +47,6 @@ export const works: Work[] = [
   { id: "c1-29", creatorId: "cry1vloon", category: "mix", name: { zh: "作品 29", en: "Work 29" }, tagline: { zh: "—", en: "—" }, price: 0, forSale: false, colors: ["var(--color-ink)", "var(--color-paper)", "var(--color-electric)"], pattern: "stripes", glyph: "哭" },
   { id: "c1-30", creatorId: "cry1vloon", category: "mix", name: { zh: "作品 30", en: "Work 30" }, tagline: { zh: "—", en: "—" }, price: 0, forSale: false, colors: ["var(--color-paper)", "var(--color-electric)", "var(--color-ink)"], pattern: "dots", glyph: "哭" },
   { id: "c1-31", creatorId: "cry1vloon", category: "mix", name: { zh: "作品 31", en: "Work 31" }, tagline: { zh: "—", en: "—" }, price: 0, forSale: false, colors: ["var(--color-electric)", "var(--color-ink)", "var(--color-paper)"], pattern: "blob", glyph: "哭" },
+  { id: "c1-32", creatorId: "cry1vloon", category: "mix", name: { zh: "作品 32", en: "Work 32" }, tagline: { zh: "—", en: "—" }, price: 0, forSale: false, colors: ["var(--color-ink)", "var(--color-electric)", "var(--color-paper)"], pattern: "scribble", glyph: "哭" },
+  { id: "c1-33", creatorId: "cry1vloon", category: "mix", name: { zh: "作品 33", en: "Work 33" }, tagline: { zh: "—", en: "—" }, price: 0, forSale: false, colors: ["var(--color-paper)", "var(--color-ink)", "var(--color-electric)"], pattern: "burst", glyph: "哭" },
 ];

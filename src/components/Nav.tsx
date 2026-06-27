@@ -67,7 +67,7 @@ export function Nav({ subpage = false }: { subpage?: boolean }) {
           </button>
 
           <Link
-            href="/partners#contact"
+            href="/contact"
             className="hidden bg-magenta px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-hard-sm transition-transform hover:-translate-y-0.5 sm:inline-block"
             onClick={close}
           >
@@ -102,7 +102,7 @@ export function Nav({ subpage = false }: { subpage?: boolean }) {
             ))}
             <li className="mt-4">
               <Link
-                href="/partners#contact"
+                href="/contact"
                 onClick={close}
                 className="inline-block bg-magenta px-5 py-3 font-mono text-sm font-bold uppercase tracking-wider text-ink"
               >

@@ -124,7 +124,7 @@ export function CreatorDetail({ id }: { id: string }) {
                         <div className="mt-3 flex items-center justify-between">
                           <span className="font-display text-2xl">¥{work.price}</span>
                           <Link
-                            href="/partners#contact"
+                            href="/contact"
                             className="bg-ink px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-acid transition-transform hover:-translate-y-0.5"
                           >
                             {c.buy}

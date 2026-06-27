@@ -44,12 +44,15 @@ import work28 from "./images/work_28.jpg";
 import work29 from "./images/work_29.jpg";
 import work30 from "./images/work_30.jpg";
 import work31 from "./images/work_31.jpg";
+import work32 from "./images/work_32.jpg";
+import work33 from "./images/work_33.jpg";
 
 const workImages = [
   work01, work02, work03, work04, work05, work06, work07, work08,
   work09, work10, work11, work12, work13, work14, work15, work16,
   work17, work18, work19, work20, work21, work22, work23, work24,
   work25, work26, work27, work28, work29, work30, work31,
+  work32, work33,
 ];
 
 function Sprockets({ count = 4 }: { count?: number }) {

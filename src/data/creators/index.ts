@@ -39,6 +39,7 @@ import { creator as cry1vloon,  works as cry1vloonWorks  } from "./cry1vloon";
 import { creator as vivi,       works as viviWorks       } from "./vivi";
 import { creator as s16_7,      works as s16_7Works      } from "./16_7";
 import { creator as co1dvvv,    works as co1dvvvWorks    } from "./co1dvvv";
+import { creator as kalare,     works as kalareWorks     } from "./kalare";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -63,6 +64,7 @@ import Cry1vloOnPage   from "./cry1vloon/page";
 import ViviPage        from "./vivi/page";
 import SixteenSevenPage from "./16_7/page";
 import Co1dvvvPage      from "./co1dvvv/page";
+import KalarePage       from "./kalare/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -84,6 +86,7 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   vivi:       ViviPage,       // Risograph Portrait / 孔版印刷·真人版
   "16_7":     SixteenSevenPage, // Zine Portrait / 地下拼贴·真人版
   co1dvvv:    Co1dvvvPage,      // Blackout Poster Portrait / 夜店海报·真人版
+  kalare:     KalarePage,       // Lookbook / 系列画册
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -107,6 +110,7 @@ export const creators: Creator[] = [
   vivi,
   s16_7,
   co1dvvv,
+  kalare,
 ];
 
 export const works: Work[] = [
@@ -129,6 +133,7 @@ export const works: Work[] = [
   ...viviWorks,
   ...s16_7Works,
   ...co1dvvvWorks,
+  ...kalareWorks,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];
