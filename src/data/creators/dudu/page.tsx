@@ -63,7 +63,7 @@ export default function CandyPage({ id: _id }: { id: string }) {
             </div>
 
             <Link
-              href="/#creators"
+              href="/partners"
               className="mt-8 inline-block border-2 border-ink bg-ink px-6 py-2.5 font-mono text-xs font-bold uppercase tracking-wider text-magenta transition-colors hover:bg-transparent hover:text-ink"
             >
               ← {c.backHome}
@@ -108,7 +108,7 @@ export default function CandyPage({ id: _id }: { id: string }) {
                               </span>
                             </div>
                             <Link
-                              href="/#contact"
+                              href="/partners"
                               className="rounded-full border-2 border-ink bg-ink px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-magenta transition-colors hover:bg-transparent hover:text-ink"
                             >
                               {c.buy}
@@ -133,7 +133,7 @@ export default function CandyPage({ id: _id }: { id: string }) {
           <span className="font-brush text-5xl text-ink">{creator.glyph}</span>
           <p className="mt-2 font-mono text-xs text-ink/50">{creator.handle}</p>
           <Link
-            href="/#creators"
+            href="/partners"
             className="mt-5 inline-block rounded-full border-2 border-ink px-6 py-2 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-magenta"
           >
             {c.allCreators}

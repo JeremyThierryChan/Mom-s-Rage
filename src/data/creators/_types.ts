@@ -10,6 +10,7 @@ export type Work = {
   tagline: { zh: string; en: string };
   price: number;
   forSale: boolean;
+  priceOnInquiry?: boolean;
   colors: [string, string, string];
   pattern: WorkPattern;
   glyph: string;

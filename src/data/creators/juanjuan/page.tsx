@@ -46,7 +46,7 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
           <div className="relative mx-auto max-w-6xl">
             {/* Back link */}
             <Link
-              href="/#creators"
+              href="/partners"
               className="kicker mb-12 inline-block text-paper/30 transition-colors hover:text-paper"
             >
               ← {c.backHome}
@@ -202,7 +202,7 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
                               ¥{work.price}
                             </span>
                             <Link
-                              href="/#contact"
+                              href="/partners"
                               className="border border-paper/20 px-4 py-2 font-mono text-[0.65rem] uppercase tracking-wider text-paper/60 transition-colors hover:border-paper hover:text-paper"
                             >
                               {c.buy}
@@ -234,7 +234,7 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
               </span>
               <p className="font-mono text-xs text-paper/30">{creator.handle}</p>
               <Link
-                href="/#creators"
+                href="/partners"
                 className="mt-6 border border-paper/20 px-8 py-3 font-mono text-xs uppercase tracking-widest text-paper/50 transition-colors hover:border-paper/50 hover:text-paper"
               >
                 {c.allCreators}

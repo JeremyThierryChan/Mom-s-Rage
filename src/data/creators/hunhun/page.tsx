@@ -33,7 +33,7 @@ export default function BrutalistPage({ id: _id }: { id: string }) {
             <div className="flex items-center justify-between border-b border-ink py-2 font-mono text-[0.6rem] uppercase tracking-widest text-ink/40">
               <span>MOM&apos;S RAGE PRESS</span>
               <span>VOL.1 — {creator.handle}</span>
-              <Link href="/#creators" className="hover:text-ink">{c.backHome} ←</Link>
+              <Link href="/partners" className="hover:text-ink">{c.backHome} ←</Link>
             </div>
 
             {/* Giant name across full width */}
@@ -99,7 +99,7 @@ export default function BrutalistPage({ id: _id }: { id: string }) {
                       <div className="flex flex-col gap-0.5">
                         <span className="font-display text-lg">¥{work.price}</span>
                         <Link
-                          href="/#contact"
+                          href="/partners"
                           className="font-mono text-[0.55rem] uppercase tracking-wider text-ink/50 underline hover:text-ink"
                         >
                           {c.buy}
@@ -140,7 +140,7 @@ export default function BrutalistPage({ id: _id }: { id: string }) {
             <span className="font-mono text-xs uppercase text-ink/30">
               {creator.id.toUpperCase()} — MOM&apos;S RAGE
             </span>
-            <Link href="/#creators" className="font-mono text-xs uppercase tracking-wider underline">
+            <Link href="/partners" className="font-mono text-xs uppercase tracking-wider underline">
               {c.allCreators}
             </Link>
           </div>

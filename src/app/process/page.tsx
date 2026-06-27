@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
+import { Process } from "@/components/Process";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function ProcessPage() {
   return (
     <>
-      <Nav />
+      <Nav subpage />
       <main>
-        <Hero />
+        <Process />
       </main>
       <Footer />
     </>

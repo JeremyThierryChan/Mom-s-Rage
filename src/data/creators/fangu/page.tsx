@@ -48,7 +48,7 @@ export default function BlackoutPage({ id: _id }: { id: string }) {
             <div className="flex items-center justify-between border-b border-paper/10 pb-4 font-mono text-[0.65rem] uppercase tracking-widest text-paper/30">
               <span>Mom&apos;s Rage × Creator</span>
               <Link
-                href="/#creators"
+                href="/partners"
                 className="transition-colors hover:text-paper"
               >
                 {c.backHome} ←
@@ -144,7 +144,7 @@ export default function BlackoutPage({ id: _id }: { id: string }) {
                               ¥{work.price}
                             </span>
                             <Link
-                              href="/#contact"
+                              href="/partners"
                               className="border px-4 py-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-paper/60 transition-colors hover:text-paper"
                               style={{ borderColor: creator.accent + "60" }}
                             >
@@ -203,7 +203,7 @@ export default function BlackoutPage({ id: _id }: { id: string }) {
                             ¥{work.price}
                           </span>
                           <Link
-                            href="/#contact"
+                            href="/partners"
                             className="px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-ink transition-colors"
                             style={{ background: creator.accent }}
                           >
@@ -222,7 +222,7 @@ export default function BlackoutPage({ id: _id }: { id: string }) {
         {/* ── Exit ────────────────────────────────────────────── */}
         <div className="border-t border-paper/10 py-12 text-center">
           <Link
-            href="/#creators"
+            href="/partners"
             className="font-mono text-xs uppercase tracking-[0.3em] text-paper/30 transition-colors hover:text-paper"
           >
             ← {c.allCreators}

@@ -34,7 +34,7 @@ export function Partners() {
 
         <Reveal delay={0.15}>
           <a
-            href="#contact"
+            href="/partners#contact"
             className="mt-12 inline-block bg-acid px-8 py-4 font-mono text-sm font-bold uppercase tracking-wider text-ink shadow-hard transition-transform hover:-translate-y-1"
           >
             {p.cta} →

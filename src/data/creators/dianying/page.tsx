@@ -56,7 +56,7 @@ export default function FilmPage({ id: _id }: { id: string }) {
           <div className="mx-auto max-w-6xl">
             {/* Meta strip */}
             <div className="mb-8 flex items-center gap-4 font-mono text-[0.6rem] uppercase tracking-widest text-paper/25">
-              <Link href="/#creators" className="hover:text-paper">{c.backHome} ←</Link>
+              <Link href="/partners" className="hover:text-paper">{c.backHome} ←</Link>
               <span className="flex-1 border-t border-dashed border-paper/10" />
               <span>FRAME 001</span>
               <span className="flex-1 border-t border-dashed border-paper/10" />
@@ -154,7 +154,7 @@ export default function FilmPage({ id: _id }: { id: string }) {
                               ¥{work.price}
                             </span>
                             <Link
-                              href="/#contact"
+                              href="/partners"
                               className="border px-4 py-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-paper/60 transition-colors hover:text-paper"
                               style={{ borderColor: creator.accent + "50" }}
                             >
@@ -182,7 +182,7 @@ export default function FilmPage({ id: _id }: { id: string }) {
           </span>
           <p className="mt-2 font-mono text-xs text-paper/30">{creator.handle}</p>
           <Link
-            href="/#creators"
+            href="/partners"
             className="mt-6 inline-block border border-paper/20 px-6 py-2.5 font-mono text-xs uppercase tracking-wider text-paper/40 transition-colors hover:border-paper/50 hover:text-paper"
           >
             {c.allCreators}

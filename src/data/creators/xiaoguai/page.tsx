@@ -37,7 +37,7 @@ export default function BlueprintPage({ id: _id }: { id: string }) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             {/* Top ruler strip */}
             <div className="mb-8 flex items-center gap-3 border-b border-ink/20 pb-4 font-mono text-[0.6rem] text-ink/30">
-              <Link href="/#creators" className="hover:text-ink">
+              <Link href="/partners" className="hover:text-ink">
                 ← {c.backHome}
               </Link>
               <span className="flex-1 border-t border-dashed border-ink/20" />
@@ -199,7 +199,7 @@ export default function BlueprintPage({ id: _id }: { id: string }) {
                               </span>
                             </div>
                             <Link
-                              href="/#contact"
+                              href="/partners"
                               className="border-2 px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-ink transition-colors hover:text-paper"
                               style={{
                                 borderColor: creator.accent,
@@ -253,7 +253,7 @@ export default function BlueprintPage({ id: _id }: { id: string }) {
               </div>
 
               <Link
-                href="/#creators"
+                href="/partners"
                 className="border border-ink/20 px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink/40 transition-colors hover:border-ink hover:text-ink"
               >
                 {c.allCreators} →

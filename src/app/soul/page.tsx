@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
+import { Soul } from "@/components/Soul";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function SoulPage() {
   return (
     <>
-      <Nav />
+      <Nav subpage />
       <main>
-        <Hero />
+        <Soul />
       </main>
       <Footer />
     </>

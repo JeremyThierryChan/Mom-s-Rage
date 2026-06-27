@@ -89,7 +89,7 @@ export default function TerminalPage({ id: _id }: { id: string }) {
             </div>
 
             <p className="mt-6 text-xs text-paper/20">
-              $ {c.backHome} → <Link href="/#creators" className="underline hover:text-paper transition-colors">{c.allCreators}</Link>
+              $ {c.backHome} → <Link href="/partners" className="underline hover:text-paper transition-colors">{c.allCreators}</Link>
             </p>
           </div>
         </section>
@@ -125,7 +125,7 @@ export default function TerminalPage({ id: _id }: { id: string }) {
                       {work.forSale ? (
                         <span style={{ color: acid }}>
                           ¥{work.price}
-                          <Link href="/#contact" className="ml-4 border border-paper/20 px-2 py-0.5 text-paper/50 hover:text-paper transition-colors">
+                          <Link href="/partners" className="ml-4 border border-paper/20 px-2 py-0.5 text-paper/50 hover:text-paper transition-colors">
                             {c.buy}
                           </Link>
                         </span>

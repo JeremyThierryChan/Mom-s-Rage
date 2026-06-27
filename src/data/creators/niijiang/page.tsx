@@ -42,7 +42,7 @@ export default function ZinePage({ id: _id }: { id: string }) {
             <div className="flex items-center justify-between border-b-2 border-ink pb-3 font-mono text-[0.65rem] uppercase tracking-widest text-ink/50">
               <span>MOM&apos;S RAGE × 创作者档案</span>
               <span>{creator.handle}</span>
-              <Link href="/#creators" className="hover:text-ink">
+              <Link href="/partners" className="hover:text-ink">
                 {c.backHome} ←
               </Link>
             </div>
@@ -97,7 +97,7 @@ export default function ZinePage({ id: _id }: { id: string }) {
                           <>
                             <span className="font-display text-xl">¥{work.price}</span>
                             <Link
-                              href="/#contact"
+                              href="/partners"
                               className="border-2 border-ink bg-ink px-3 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-acid"
                             >
                               {c.buy}
@@ -134,7 +134,7 @@ export default function ZinePage({ id: _id }: { id: string }) {
                 </div>
               </div>
               <Link
-                href="/#creators"
+                href="/partners"
                 className="border-2 border-ink px-6 py-3 font-mono text-xs font-bold uppercase tracking-wider transition-colors hover:bg-ink hover:text-acid"
               >
                 {c.allCreators} →

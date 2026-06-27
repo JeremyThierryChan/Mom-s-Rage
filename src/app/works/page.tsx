@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
+import { Works } from "@/components/Works";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function WorksPage() {
   return (
     <>
-      <Nav />
+      <Nav subpage />
       <main>
-        <Hero />
+        <Works />
       </main>
       <Footer />
     </>

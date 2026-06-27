@@ -44,7 +44,7 @@ export function CreatorDetail({ id }: { id: string }) {
           />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
             <Link
-              href="/#creators"
+              href="/partners"
               className="kicker inline-block text-paper/60 transition-colors hover:text-acid"
             >
               {c.backHome}
@@ -124,7 +124,7 @@ export function CreatorDetail({ id }: { id: string }) {
                         <div className="mt-3 flex items-center justify-between">
                           <span className="font-display text-2xl">¥{work.price}</span>
                           <Link
-                            href="/#contact"
+                            href="/partners#contact"
                             className="bg-ink px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-acid transition-transform hover:-translate-y-0.5"
                           >
                             {c.buy}

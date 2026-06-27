@@ -69,13 +69,13 @@ export function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <a
-            href="#works"
+            href="/works"
             className="bg-acid px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-ink shadow-hard transition-transform hover:-translate-y-1"
           >
             {t.hero.ctaWorks}
           </a>
           <a
-            href="#contact"
+            href="/partners#contact"
             className="border-2 border-paper px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-paper transition-colors hover:bg-paper hover:text-ink"
           >
             {t.hero.ctaIdea}

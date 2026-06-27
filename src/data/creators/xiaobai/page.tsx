@@ -62,7 +62,7 @@ export default function RisographPage({ id: _id }: { id: string }) {
           <div className="mx-auto max-w-7xl">
             <div className="mb-6 flex items-center justify-between font-mono text-[0.6rem] uppercase tracking-widest text-ink/30">
               <span>孔版印刷 / RISOGRAPH</span>
-              <Link href="/#creators" className="hover:text-ink">{c.backHome} ←</Link>
+              <Link href="/partners" className="hover:text-ink">{c.backHome} ←</Link>
             </div>
 
             {/* Name with double-layer riso offset */}
@@ -157,7 +157,7 @@ export default function RisographPage({ id: _id }: { id: string }) {
                             <>
                               <span className="font-display text-2xl">¥{work.price}</span>
                               <Link
-                                href="/#contact"
+                                href="/partners"
                                 className="border-2 border-ink bg-ink px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-paper transition-colors hover:bg-paper hover:text-ink"
                               >
                                 {c.buy}
@@ -188,7 +188,7 @@ export default function RisographPage({ id: _id }: { id: string }) {
               <p>{creator.handle}</p>
             </div>
             <Link
-              href="/#creators"
+              href="/partners"
               className="border border-ink/30 px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-ink/50 transition-colors hover:border-ink hover:text-ink"
             >
               {c.allCreators}

@@ -1,12 +1,11 @@
 "use client";
 
 /**
- * Editorial / 杂志双栏 template.
- * Left half: solid accent block with oversized glyph.
- * Right half: clean editorial layout.
- * Works displayed as a numbered list with inline thumbnail.
+ * Editorial · Portrait / 杂志双栏 · 真人版
+ * Based on akuang's Editorial template — left panel replaced with real photo.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { creator, works } from ".";
@@ -15,7 +14,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 
-export default function EditorialPage({ id: _id }: { id: string }) {
+export default function EditorialPortraitPage({ id: _id }: { id: string }) {
   const { t, lang } = useLang();
   const c = t.creators;
   const forSale = works.filter((w) => w.forSale);
@@ -26,25 +25,43 @@ export default function EditorialPage({ id: _id }: { id: string }) {
       <main>
         {/* ── Split hero ─────────────────────────────────────── */}
         <section className="grid min-h-screen grid-cols-1 md:grid-cols-2">
-          {/* Accent half */}
+          {/* Photo half */}
           <div
-            className="relative flex min-h-[55vw] items-center justify-center overflow-hidden md:min-h-screen"
+            className="relative min-h-[70vw] overflow-hidden md:min-h-screen"
             style={{ background: creator.accent }}
           >
-            {/* Shadow glyph */}
+            {/* Ghost glyph watermark */}
             <span
-              className="pointer-events-none absolute select-none font-brush leading-none text-ink/10"
+              className="pointer-events-none absolute inset-0 flex items-center justify-center select-none font-brush leading-none text-ink/10"
               style={{ fontSize: "clamp(180px, 38vw, 520px)" }}
+              aria-hidden
             >
               {creator.glyph}
             </span>
-            {/* Foreground glyph */}
-            <span
-              className="relative font-brush leading-none text-ink"
-              style={{ fontSize: "clamp(90px, 20vw, 280px)" }}
-            >
-              {creator.glyph}
-            </span>
+
+            {creator.avatar ? (
+              <Image
+                src={creator.avatar}
+                alt={creator.name[lang]}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-top"
+                priority
+              />
+            ) : (
+              <span
+                className="relative flex h-full items-center justify-center font-brush leading-none text-ink"
+                style={{ fontSize: "clamp(90px, 20vw, 280px)" }}
+              >
+                {creator.glyph}
+              </span>
+            )}
+
+            {/* Accent tint overlay at bottom */}
+            <div
+              className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/3"
+              style={{ background: `linear-gradient(to top, ${creator.accent}cc, transparent)` }}
+            />
           </div>
 
           {/* Info half */}
@@ -59,7 +76,7 @@ export default function EditorialPage({ id: _id }: { id: string }) {
             <h1 className="font-display text-6xl uppercase leading-none md:text-[5.5rem]">
               {creator.name[lang]}
             </h1>
-            <p className="mt-3 font-mono text-xs tracking-[0.3em] uppercase text-ink/50">
+            <p className="mt-3 font-mono text-xs tracking-[0.3em] text-ink/50">
               {creator.handle}
             </p>
 
@@ -128,7 +145,13 @@ export default function EditorialPage({ id: _id }: { id: string }) {
                         <h3 className="font-display text-xl uppercase">{work.name[lang]}</h3>
                         <p className="mt-1 text-sm text-ink/60">{work.tagline[lang]}</p>
                         <div className="mt-4 flex items-center justify-between">
-                          <span className="font-display text-2xl">¥{work.price}</span>
+                          <span className="font-display text-2xl">
+                            {work.priceOnInquiry ? (
+                              <span className="font-mono text-sm text-ink/50">价格详询</span>
+                            ) : (
+                              `¥${work.price}`
+                            )}
+                          </span>
                           <Link
                             href="/partners"
                             className="bg-ink px-4 py-2 font-mono text-xs font-bold uppercase text-acid transition-transform hover:-translate-y-0.5"
