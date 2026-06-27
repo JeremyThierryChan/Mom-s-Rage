@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLang } from "@/lib/i18n";
 import { Marquee } from "./Marquee";
@@ -68,18 +69,18 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <a
+          <Link
             href="/works"
             className="bg-acid px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-ink shadow-hard transition-transform hover:-translate-y-1"
           >
             {t.hero.ctaWorks}
-          </a>
-          <a
+          </Link>
+          <Link
             href="/partners#contact"
             className="border-2 border-paper px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-paper transition-colors hover:bg-paper hover:text-ink"
           >
             {t.hero.ctaIdea}
-          </a>
+          </Link>
 
           {/* Soul badge */}
           <div className="ml-auto hidden items-center gap-3 sm:flex">

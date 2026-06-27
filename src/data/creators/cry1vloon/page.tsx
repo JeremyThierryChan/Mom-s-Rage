@@ -25,8 +25,32 @@ import work09 from "./images/work_09.jpg";
 import work10 from "./images/work_10.jpg";
 import work11 from "./images/work_11.jpg";
 import work12 from "./images/work_12.jpg";
+import work13 from "./images/work_13.jpg";
+import work14 from "./images/work_14.jpg";
+import work15 from "./images/work_15.jpg";
+import work16 from "./images/work_16.jpg";
+import work17 from "./images/work_17.jpg";
+import work18 from "./images/work_18.jpg";
+import work19 from "./images/work_19.jpg";
+import work20 from "./images/work_20.jpg";
+import work21 from "./images/work_21.jpg";
+import work22 from "./images/work_22.jpg";
+import work23 from "./images/work_23.jpg";
+import work24 from "./images/work_24.jpg";
+import work25 from "./images/work_25.jpg";
+import work26 from "./images/work_26.jpg";
+import work27 from "./images/work_27.jpg";
+import work28 from "./images/work_28.jpg";
+import work29 from "./images/work_29.jpg";
+import work30 from "./images/work_30.jpg";
+import work31 from "./images/work_31.jpg";
 
-const workImages = [work01, work02, work03, work04, work05, work06, work07, work08, work09, work10, work11, work12];
+const workImages = [
+  work01, work02, work03, work04, work05, work06, work07, work08,
+  work09, work10, work11, work12, work13, work14, work15, work16,
+  work17, work18, work19, work20, work21, work22, work23, work24,
+  work25, work26, work27, work28, work29, work30, work31,
+];
 
 function Sprockets({ count = 4 }: { count?: number }) {
   return (

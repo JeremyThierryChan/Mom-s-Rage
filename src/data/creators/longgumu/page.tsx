@@ -23,8 +23,12 @@ import work05 from "./images/work_05.jpg";
 import work06 from "./images/work_06.jpg";
 import work07 from "./images/work_07.jpg";
 import work08 from "./images/work_08.jpg";
+import work09 from "./images/work_09.jpg";
+import work10 from "./images/work_10.jpg";
+import work11 from "./images/work_11.jpg";
+import work12 from "./images/work_12.jpg";
 
-const workImages = [work01, work02, work03, work04, work05, work06, work07, work08];
+const workImages = [work01, work02, work03, work04, work05, work06, work07, work08, work09, work10, work11, work12];
 
 function Cursor() {
   const [on, setOn] = useState(true);
