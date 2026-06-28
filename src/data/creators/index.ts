@@ -132,6 +132,22 @@ export const creators: Creator[] = [
 ];
 
 export const works: Work[] = [
+  // ── 真实合伙人 ─────────────────────────────────────────────────────────────
+  ...jtcWorks,
+  ...longgumuWorks,
+  ...zachWorks,
+  ...erraticvexWorks,
+  ...cry1vloonWorks,
+  ...viviWorks,
+  ...s16_7Works,
+  ...juanjuanWorks,
+  ...co1dvvvWorks,
+  ...kalareWorks,
+  ...soulWorks,
+  ...yixunWorks,
+  ...bartWorks,
+  ...shanWorks,
+  // ── 示例创作者（虚构内容）──────────────────────────────────────────────────
   ...akuangWorks,
   ...niijiangWorks,
   ...fanguWorks,
@@ -142,20 +158,6 @@ export const works: Work[] = [
   ...xiaobaiWorks,
   ...dianyingWorks,
   ...lengdanWorks,
-  ...juanjuanWorks,
-  ...jtcWorks,
-  ...longgumuWorks,
-  ...zachWorks,
-  ...erraticvexWorks,
-  ...cry1vloonWorks,
-  ...viviWorks,
-  ...s16_7Works,
-  ...co1dvvvWorks,
-  ...kalareWorks,
-  ...soulWorks,
-  ...yixunWorks,
-  ...bartWorks,
-  ...shanWorks,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];
