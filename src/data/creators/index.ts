@@ -42,7 +42,7 @@ import { creator as co1dvvv,    works as co1dvvvWorks    } from "./co1dvvv";
 import { creator as kalare,     works as kalareWorks     } from "./kalare";
 import { creator as soul,       works as soulWorks       } from "./soul";
 import { creator as yixun,      works as yixunWorks      } from "./yixun";
-import { creator as bart,       works as bartWorks       } from "./bart";
+import { creator as bart,       works as bartWorks       } from "./Bart";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -70,7 +70,7 @@ import Co1dvvvPage      from "./co1dvvv/page";
 import KalarePage       from "./kalare/page";
 import SoulPage         from "./soul/page";
 import YixunPage        from "./yixun/page";
-import BartPage         from "./bart/page";
+import BartPage         from "./Bart/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
