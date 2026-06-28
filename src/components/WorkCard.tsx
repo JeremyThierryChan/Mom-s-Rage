@@ -20,18 +20,20 @@ export function WorkCard({
   const w = t.works;
   const creator = showCreator ? getCreator(work.creatorId) : undefined;
 
+  const thumbImg = work.images?.[0] ?? work.image;
+
   return (
     <article
       className="group flex cursor-pointer flex-col border-2 border-ink bg-paper shadow-hard transition-transform hover:-translate-y-1"
       onClick={() => onSelect?.(work)}
     >
       <div className="overflow-hidden border-b-2 border-ink">
-        {work.image ? (
+        {thumbImg ? (
           <Image
-            src={work.image}
+            src={thumbImg}
             alt={work.name.zh}
-            width={work.image.width}
-            height={work.image.height}
+            width={thumbImg.width}
+            height={thumbImg.height}
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         ) : (

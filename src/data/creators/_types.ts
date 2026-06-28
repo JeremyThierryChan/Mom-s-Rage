@@ -15,6 +15,7 @@ export type Work = {
   pattern: WorkPattern;
   glyph: string;
   image?: StaticImageData;
+  images?: StaticImageData[];
 };
 
 import type { StaticImageData } from "next/image";

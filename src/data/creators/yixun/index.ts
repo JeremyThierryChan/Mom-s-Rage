@@ -1,6 +1,15 @@
 import type { Creator, Work } from "../_types";
 import avatarImg from "./images/avatar.jpg";
 import work01 from "./images/work_01.jpg";
+import work02 from "./images/work_02.jpg";
+import work03 from "./images/work_03.jpg";
+import work04 from "./images/work_04.jpg";
+import work05 from "./images/work_05.jpg";
+import work06 from "./images/work_06.jpg";
+import work07 from "./images/work_07.jpg";
+import work08 from "./images/work_08.jpg";
+import work09 from "./images/work_09.jpg";
+import work10 from "./images/work_10.jpg";
 
 export const creator: Creator = {
   id: "yixun",
@@ -31,6 +40,6 @@ export const works: Work[] = [
     colors: ["var(--color-orange)", "var(--color-ink)", "var(--color-paper)"],
     pattern: "burst",
     glyph: "循",
-    image: work01,
+    images: [work01, work02, work03, work04, work05, work06, work07, work08, work09, work10],
   },
 ];
