@@ -94,6 +94,26 @@ const zh = {
     angerQuote: "“不行，这个太小众了，没人喜欢。”",
     angerBody:
       "主流艺术品牌太商业，不注重灵魂表达；真正有创意的独立作品又被打成小众，得不到推广。我们想打破这道壁垒——让每一种表达，都有它该有的位置。",
+    timeline: {
+      title: '想象力是怎么消失的',
+      stages: [
+        { label: '小学', text: '「你这画的什么？」——从第一句否定开始。' },
+        { label: '中学', text: '「别搞那些没用的，先把成绩搞好。」' },
+        { label: '大学', text: '「学艺术出来能干嘛？不如学个有用的专业。」' },
+        { label: '工作', text: '「这不就是爱好吗，上班了哪有时间搞这个。」' },
+      ],
+    },
+    contrast: {
+      title: '他们在做什么，我们在做什么',
+      them: '主流品牌',
+      us: '妈见打',
+      rows: [
+        { them: '追热点，做当下好卖的', us: '追真实，做创作者真心长出来的' },
+        { them: '风格迎合市场口味', us: '风格跟着创作者走' },
+        { them: '流水线生产，复制成功公式', us: '限量共创，每件都有创作者的体温' },
+        { them: '灵魂是商业逻辑', us: '灵魂是创作者的痕迹' },
+      ],
+    },
   },
   soul: {
     kicker: "03 — 品牌的灵魂",
@@ -125,6 +145,25 @@ const zh = {
     soulLead: "如果只能用一个词概括这个品牌的灵魂——",
     soulWord: "真",
     soulTail: "真实的表达，真实的情绪，真实的自己。没有滤镜。",
+    manifesto: {
+      title: '我们相信',
+      items: [
+        '每一件作品都应该有创作者的体温',
+        '「太小众了」是最没底气的拒绝',
+        '笨拙的真诚比精致的套路更有力量',
+        '愤怒也是一种创造力',
+        '你心里那个离谱的想法，值得被做出来',
+        '艺术不需要被定义，只需要被感受',
+      ],
+    },
+    realExamples: {
+      title: '什么叫「真」',
+      items: [
+        { label: '泥塑', text: '用手把情绪捏出来。歪歪扭扭，没有两只一样——那才是真的。' },
+        { label: '插画', text: '把叛逆画出来。每一笔都是态度，不讨好任何人的口味。' },
+        { label: '服装', text: '穿上它，你就知道自己和别人不一样——那种感觉，就是真的。' },
+      ],
+    },
   },
   works: {
     kicker: "04 — 作品",
@@ -165,21 +204,58 @@ const zh = {
     title: "从一个离谱的想法，到属于你的东西",
     steps: [
       {
-        num: "01",
+        num: '01',
         title: "大胆说出你的想法",
         body: "无论多离谱都可以。越离谱，我们越兴奋。",
+        details: [
+          '可以是一段话、一张图、一个词、一种心情',
+          '不需要懂设计，不需要会画画',
+          '越模糊越好——模糊说明还没被标准答案污染',
+        ],
       },
       {
-        num: "02",
+        num: '02',
         title: "和你一起落地",
         body: "设计师和艺术家跟你一起，把脑子里的东西变成真实的、摸得到的作品。",
+        details: [
+          '团队里有设计师、艺术家、手工创作者',
+          '我们来问问题，把模糊的感觉变清晰',
+          '你可以全程参与，也可以只说结果',
+        ],
       },
       {
-        num: "03",
+        num: '03',
         title: "拿到只属于你的那件",
         body: "可能是一幅画、一只玩偶、一个你每天都用的杯子。重要的是——它是为你长出来的。",
+        details: [
+          '实体作品为主：印刷品、手工品、服装、摆件',
+          '真的只属于你的版本，不会复制给别人',
+          '如果你喜欢，可以一起把它推出去',
+        ],
       },
     ],
+    faq: {
+      title: '常见问题',
+      items: [
+        {
+          q: '多长时间能做完？',
+          a: '取决于作品的复杂度，一般 1–4 周。我们会提前告诉你预期时间，不让你等得不知道为什么。',
+        },
+        {
+          q: '价格大概是多少？',
+          a: '从 ¥10 的小件到更复杂的定制都有。不同创作者定价不同，聊完需求后我们会告诉你。',
+        },
+        {
+          q: '我不懂设计、没有艺术基础怎么办？',
+          a: '完全没问题。你只需要有感觉、有想法。我们负责把它变成作品——这就是我们存在的意义。',
+        },
+        {
+          q: '成品是什么形式？',
+          a: '实体商品为主：印刷品、手工品、服装、摆件等。具体形式在沟通后确定，聊一聊就知道了。',
+        },
+      ],
+    },
+    cta: '现在就说出你的想法',
   },
   partners: {
     kicker: "06 — 同频艺术合伙人",
@@ -316,6 +392,26 @@ const en: Dict = {
     angerQuote: "“No. Too niche. Nobody likes that.”",
     angerBody:
       "Mainstream art brands are too commercial, with no soul. Truly creative independent work gets branded “niche” and never reaches anyone. We want to break that wall — so every form of expression gets the place it deserves.",
+    timeline: {
+      title: 'Where imagination disappears',
+      stages: [
+        { label: 'Primary school', text: 'What is this even supposed to be? — The first rejection.' },
+        { label: 'High school', text: 'Stop wasting time on that. Focus on your grades.' },
+        { label: 'University', text: 'What are you going to do with art? Study something useful.' },
+        { label: 'Work', text: "That's just a hobby. You're working now — no time for that." },
+      ],
+    },
+    contrast: {
+      title: 'What they do. What we do.',
+      them: 'Mainstream brands',
+      us: "Mom's Rage",
+      rows: [
+        { them: 'Chase trends, make what sells now', us: 'Chase truth, make what genuinely grows from inside' },
+        { them: 'Style follows market taste', us: 'Style follows the creator' },
+        { them: 'Assembly-line, copy the formula', us: "Limited co-creation, every piece has the maker's warmth" },
+        { them: 'Soul is commercial logic', us: "Soul is the maker's fingerprint" },
+      ],
+    },
   },
   soul: {
     kicker: "03 — The Soul",
@@ -344,6 +440,25 @@ const en: Dict = {
         body: "Even when opposed, stand by what you believe is right. It's in the brand's DNA from birth.",
       },
     ],
+    manifesto: {
+      title: 'We believe',
+      items: [
+        "Every piece should carry the maker's warmth",
+        'Too niche is the most cowardly rejection there is',
+        'Clumsy sincerity hits harder than polished formula',
+        'Rage is a form of creativity',
+        'That ridiculous idea in your head deserves to be made',
+        "Art doesn't need to be defined — only felt",
+      ],
+    },
+    realExamples: {
+      title: 'What real looks like',
+      items: [
+        { label: 'Clay', text: "Squeeze emotion out with your hands. Crooked, none the same — that's real." },
+        { label: 'Illustration', text: "Draw the rebellion. Every line is a stance. Not made to please anyone's taste." },
+        { label: 'Apparel', text: "Put it on and you know you're different. That feeling — that's real." },
+      ],
+    },
     soulLead: "If one word had to capture the brand's soul —",
     soulWord: "真",
     soulTail: "Real expression. Real emotion. Real you. No filter.",
@@ -390,18 +505,55 @@ const en: Dict = {
         num: "01",
         title: "Say your idea out loud",
         body: "However ridiculous. The more ridiculous, the more excited we get.",
+        details: [
+          'A sentence, a photo, a word, a feeling — anything works',
+          'No design skills needed. No art background required.',
+          "The vaguer the better — vague means it hasn't been sanded down yet",
+        ],
       },
       {
         num: "02",
         title: "We build it with you",
         body: "Designers and artists work with you to turn what's in your head into something real you can touch.",
+        details: [
+          'The team includes designers, artists, and handcraft makers',
+          'We ask questions to sharpen the blur into something clear',
+          'You can be hands-on the whole way, or just tell us the outcome',
+        ],
       },
       {
         num: "03",
         title: "Get the one that's only yours",
         body: "Maybe a painting, a doll, a cup you use every day. What matters: it grew for you.",
+        details: [
+          'Physical works: prints, handmade, apparel, objects',
+          "Truly yours — we don't duplicate it for someone else",
+          'If you love it, we can push it out into the world together',
+        ],
       },
     ],
+    faq: {
+      title: 'FAQ',
+      items: [
+        {
+          q: 'How long does it take?',
+          a: "Depends on complexity — usually 1–4 weeks. We'll tell you the expected timeline upfront so you're never left wondering.",
+        },
+        {
+          q: 'How much does it cost?',
+          a: "From ¥10 for small pieces to more for complex commissions. Pricing varies by creator — we'll quote after we understand what you need.",
+        },
+        {
+          q: 'What if I have no design or art background?',
+          a: "Completely fine. You just need a feeling and an idea. We handle turning it into a piece — that's exactly why we exist.",
+        },
+        {
+          q: 'What form does the final piece take?',
+          a: 'Primarily physical: prints, handmade goods, apparel, objects. Digital versions depend on the project — chat with us to find out.',
+        },
+      ],
+    },
+    cta: 'Say your idea out loud — right now',
   },
   partners: {
     kicker: "06 — Aligned art partners",

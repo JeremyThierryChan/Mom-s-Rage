@@ -40,6 +40,7 @@ import { creator as vivi,       works as viviWorks       } from "./vivi";
 import { creator as s16_7,      works as s16_7Works      } from "./16_7";
 import { creator as co1dvvv,    works as co1dvvvWorks    } from "./co1dvvv";
 import { creator as kalare,     works as kalareWorks     } from "./kalare";
+import { creator as soul,       works as soulWorks       } from "./soul";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -65,6 +66,7 @@ import ViviPage        from "./vivi/page";
 import SixteenSevenPage from "./16_7/page";
 import Co1dvvvPage      from "./co1dvvv/page";
 import KalarePage       from "./kalare/page";
+import SoulPage         from "./soul/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -87,10 +89,24 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   "16_7":     SixteenSevenPage, // Zine Portrait / 地下拼贴·真人版
   co1dvvv:    Co1dvvvPage,      // Blackout Poster Portrait / 夜店海报·真人版
   kalare:     KalarePage,       // Lookbook / 系列画册
+  soul:       SoulPage,         // Lookbook · 版权分区
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
 export const creators: Creator[] = [
+  // ── 有真实头像 ──────────────────────────────────────────────────────────────
+  jtc,
+  longgumu,
+  zach,
+  erraticvex,
+  cry1vloon,
+  vivi,
+  s16_7,
+  juanjuan,
+  co1dvvv,
+  kalare,
+  soul,
+  // ── 文字字形头像 ────────────────────────────────────────────────────────────
   akuang,
   niijiang,
   fangu,
@@ -101,16 +117,6 @@ export const creators: Creator[] = [
   xiaobai,
   dianying,
   lengdan,
-  juanjuan,
-  jtc,
-  longgumu,
-  zach,
-  erraticvex,
-  cry1vloon,
-  vivi,
-  s16_7,
-  co1dvvv,
-  kalare,
 ];
 
 export const works: Work[] = [
@@ -134,6 +140,7 @@ export const works: Work[] = [
   ...s16_7Works,
   ...co1dvvvWorks,
   ...kalareWorks,
+  ...soulWorks,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];

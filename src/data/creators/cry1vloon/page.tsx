@@ -7,6 +7,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useLang } from "@/lib/i18n";
 import { creator, works } from ".";
 import { Nav } from "@/components/Nav";
@@ -57,7 +58,7 @@ const workImages = [
 
 function Sprockets({ count = 4 }: { count?: number }) {
   return (
-    <div className="flex flex-col items-center gap-3 py-2">
+    <div className="flex flex-1 flex-col items-center justify-around py-2">
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
@@ -72,9 +73,39 @@ function Sprockets({ count = 4 }: { count?: number }) {
 export default function Cry1vloOnPage({ id: _id }: { id: string }) {
   const { t, lang } = useLang();
   const c = t.creators;
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox]);
 
   return (
     <>
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <Image
+            src={workImages[lightbox]}
+            alt={works[lightbox]?.name[lang] ?? `作品 ${lightbox + 1}`}
+            width={workImages[lightbox].width}
+            height={workImages[lightbox].height}
+            className="object-contain"
+            style={{ maxHeight: "90vh", maxWidth: "90vw", width: "auto", height: "auto" }}
+          />
+          <button
+            className="absolute right-4 top-4 font-mono text-sm text-white/50 hover:text-white"
+            onClick={() => setLightbox(null)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
       <Nav subpage />
       <main className="bg-ink text-paper">
 
@@ -185,46 +216,64 @@ export default function Cry1vloOnPage({ id: _id }: { id: string }) {
             </Reveal>
 
             <div className="border border-paper/10 bg-paper/5">
-              {workImages.map((img, i) => (
-                <Reveal key={i} delay={i * 0.07}>
-                  <div className="grid grid-cols-[2rem_auto_1fr] items-stretch border-b border-paper/10 last:border-0 sm:grid-cols-[3rem_14rem_1fr]">
-                    {/* Sprocket rail */}
-                    <div className="flex flex-col items-center gap-2 border-r border-paper/10 bg-paper/5 py-4 px-2">
-                      <span
-                        className="font-mono text-[0.55rem] font-bold"
-                        style={{ color: creator.accent }}
-                      >
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <Sprockets count={4} />
-                    </div>
-
-                    {/* Real photo frame */}
-                    <div className="relative border-r border-paper/10" style={{ minHeight: 160 }}>
-                      <Image
-                        src={img}
-                        alt={works[i]?.name[lang] ?? `作品 ${i + 1}`}
-                        fill
-                        sizes="(max-width: 640px) 40vw, 224px"
-                        className="object-cover"
-                      />
-                    </div>
-
-                    {/* Info */}
-                    <div className="flex flex-col justify-center p-5 sm:p-7">
-                      <p className="kicker" style={{ color: creator.accent }}>
-                        {t.works.categories[works[i]?.category ?? "mix"]}
-                      </p>
-                      <h3 className="font-display mt-2 text-2xl uppercase text-paper sm:text-3xl">
-                        {works[i]?.name[lang] ?? `作品 ${i + 1}`}
-                      </h3>
-                      <span className="mt-5 font-mono text-[0.65rem] uppercase tracking-wider text-paper/25">
-                        {t.works.notForSale}
-                      </span>
-                    </div>
+              {workImages.map((img, i) => {
+                const isLandscape = img.width > img.height;
+                const infoBlock = (
+                  <div className="flex flex-col justify-center p-4 sm:p-7">
+                    <p className="kicker" style={{ color: creator.accent }}>
+                      {t.works.categories[works[i]?.category ?? "mix"]}
+                    </p>
+                    <h3 className="font-display mt-2 text-xl uppercase text-paper sm:text-3xl">
+                      {works[i]?.name[lang] ?? `作品 ${i + 1}`}
+                    </h3>
+                    <span className="mt-4 font-mono text-[0.65rem] uppercase tracking-wider text-paper/25">
+                      {t.works.notForSale}
+                    </span>
                   </div>
-                </Reveal>
-              ))}
+                );
+                const imgButton = (isTop: boolean) => (
+                  <button
+                    className={`shrink-0 cursor-zoom-in ${isTop ? "border-t border-paper/10" : "border-r border-paper/10"}`}
+                    onClick={() => setLightbox(i)}
+                    aria-label={`查看大图：${works[i]?.name[lang] ?? `作品 ${i + 1}`}`}
+                  >
+                    <Image
+                      src={img}
+                      alt={works[i]?.name[lang] ?? `作品 ${i + 1}`}
+                      width={img.width}
+                      height={img.height}
+                      style={{ height: 160, width: "auto", display: "block" }}
+                    />
+                  </button>
+                );
+                return (
+                  <Reveal key={i} delay={i * 0.07}>
+                    <div className="flex border-b border-paper/10 last:border-0">
+                      {/* Sprocket rail */}
+                      <div className="flex shrink-0 flex-col items-center gap-2 border-r border-paper/10 bg-paper/5 py-4 px-2" style={{ width: "2rem" }}>
+                        <span className="font-mono text-[0.55rem] font-bold" style={{ color: creator.accent }}>
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <Sprockets count={4} />
+                      </div>
+
+                      {isLandscape ? (
+                        /* Wide image: info above, image below */
+                        <div className="flex flex-1 flex-col">
+                          {infoBlock}
+                          {imgButton(true)}
+                        </div>
+                      ) : (
+                        /* Portrait image: image left, info right */
+                        <>
+                          {imgButton(false)}
+                          {infoBlock}
+                        </>
+                      )}
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>

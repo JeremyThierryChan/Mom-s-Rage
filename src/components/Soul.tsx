@@ -38,6 +38,38 @@ export function Soul() {
           ))}
         </div>
 
+        {/* Manifesto */}
+        <Reveal delay={0.1}>
+          <p className="kicker mt-16 mb-6 text-magenta">{s.manifesto.title}</p>
+        </Reveal>
+        <div className="flex flex-col divide-y divide-ink/10 border-t border-ink/10">
+          {s.manifesto.items.map((item, i) => (
+            <Reveal key={i} delay={i * 0.06}>
+              <div className="flex items-baseline gap-4 py-4">
+                <span className="shrink-0 font-mono text-xs text-magenta/50">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-display text-xl leading-snug sm:text-2xl">{item}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Real examples */}
+        <Reveal delay={0.1}>
+          <p className="kicker mt-16 mb-6 text-ink/50">{s.realExamples.title}</p>
+        </Reveal>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {s.realExamples.items.map((ex, i) => (
+            <Reveal key={ex.label} delay={i * 0.1}>
+              <div className="border-2 border-ink p-5 h-full">
+                <span className="font-brush text-3xl text-magenta">{ex.label}</span>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">{ex.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
         {/* The soul: 真 */}
         <Reveal delay={0.1}>
           <div className="mt-14 flex flex-col items-center gap-4 border-2 border-ink bg-ink p-8 text-center text-paper sm:p-12">

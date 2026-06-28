@@ -49,6 +49,56 @@ export function Why() {
             <p className="mt-4 max-w-2xl text-sm text-paper/75 sm:text-base">{w.angerBody}</p>
           </div>
         </Reveal>
+
+        {/* Timeline */}
+        <Reveal delay={0.1}>
+          <p className="kicker mt-20 mb-8 text-paper/50">{w.timeline.title}</p>
+        </Reveal>
+        <div className="relative border-l-2 border-paper/20 pl-8 flex flex-col gap-8">
+          {w.timeline.stages.map((stage, i) => (
+            <Reveal key={stage.label} delay={i * 0.1}>
+              <div className="relative">
+                <span
+                  className="absolute -left-[2.3rem] top-1 h-3 w-3 rounded-full border-2 border-blood bg-ink"
+                  aria-hidden
+                />
+                <p className="kicker text-blood">{stage.label}</p>
+                <p className="mt-1 text-sm text-paper/70 sm:text-base">{stage.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Contrast */}
+        <Reveal delay={0.1}>
+          <p className="kicker mt-20 mb-6 text-paper/50">{w.contrast.title}</p>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div className="overflow-hidden border border-paper/20">
+            <div className="grid grid-cols-2">
+              <div className="border-b border-r border-paper/20 bg-paper/5 px-4 py-3 font-mono text-xs tracking-widest text-paper/40 uppercase">
+                {w.contrast.them}
+              </div>
+              <div className="border-b border-paper/20 bg-acid/10 px-4 py-3 font-mono text-xs tracking-widest text-acid uppercase">
+                {w.contrast.us}
+              </div>
+              {w.contrast.rows.flatMap((row, i) => [
+                <div
+                  key={`them-${i}`}
+                  className={`border-r border-paper/20 px-4 py-4 text-sm text-paper/50 ${i < w.contrast.rows.length - 1 ? "border-b" : ""}`}
+                >
+                  {row.them}
+                </div>,
+                <div
+                  key={`us-${i}`}
+                  className={`px-4 py-4 text-sm text-paper ${i < w.contrast.rows.length - 1 ? "border-b border-paper/20" : ""}`}
+                >
+                  {row.us}
+                </div>,
+              ])}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
