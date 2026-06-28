@@ -58,7 +58,7 @@ export const works: Work[] = [
     price: 850,
     forSale: true,
     colors: ["var(--color-ink)", "var(--color-magenta)", "var(--color-paper)"],
-    pattern: "noise",
+    pattern: "scribble",
     glyph: "静",
   },
   {
@@ -88,7 +88,7 @@ export const works: Work[] = [
     price: 0,
     forSale: false,
     colors: ["var(--color-ink)", "var(--color-electric)", "var(--color-magenta)"],
-    pattern: "wave",
+    pattern: "blob",
     glyph: "龙",
   },
   {
