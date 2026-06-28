@@ -1,5 +1,11 @@
 import type { Creator, Work } from "../_types";
 import avatarImg from "./images/avatar.jpg";
+import work01 from "./images/work_01.jpg";
+import work02 from "./images/work_02.jpg";
+import work03 from "./images/work_03.jpg";
+import work04 from "./images/work_04.jpg";
+import work05 from "./images/work_05.jpg";
+import work06 from "./images/work_06.jpg";
 
 export const creator: Creator = {
   id: "shan",
@@ -30,6 +36,7 @@ export const works: Work[] = [
     colors: ["var(--color-magenta)", "var(--color-ink)", "var(--color-electric)"],
     pattern: "burst",
     glyph: "霓",
+    image: work01,
   },
   {
     id: "shan-02",
@@ -45,6 +52,7 @@ export const works: Work[] = [
     colors: ["var(--color-magenta)", "var(--color-paper)", "var(--color-ink)"],
     pattern: "grid",
     glyph: "果",
+    image: work02,
   },
   {
     id: "shan-03",
@@ -60,6 +68,7 @@ export const works: Work[] = [
     colors: ["var(--color-ink)", "var(--color-magenta)", "var(--color-paper)"],
     pattern: "scribble",
     glyph: "静",
+    image: work03,
   },
   {
     id: "shan-04",
@@ -75,6 +84,7 @@ export const works: Work[] = [
     colors: ["var(--color-magenta)", "var(--color-acid)", "var(--color-paper)"],
     pattern: "burst",
     glyph: "花",
+    image: work04,
   },
   {
     id: "shan-05",
@@ -90,6 +100,7 @@ export const works: Work[] = [
     colors: ["var(--color-ink)", "var(--color-electric)", "var(--color-magenta)"],
     pattern: "blob",
     glyph: "龙",
+    image: work05,
   },
   {
     id: "shan-06",
@@ -105,5 +116,6 @@ export const works: Work[] = [
     colors: ["var(--color-ink)", "var(--color-magenta)", "var(--color-electric)"],
     pattern: "grid",
     glyph: "夜",
+    image: work06,
   },
 ];

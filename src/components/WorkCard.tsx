@@ -1,29 +1,42 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { getCreator } from "@/data/creators";
 import type { Work } from "@/data/works";
 import { WorkArt } from "./WorkArt";
 
-/** Shared portfolio card — used by the homepage gallery and creator pages. */
 export function WorkCard({
   work,
   showCreator = false,
+  onSelect,
 }: {
   work: Work;
   showCreator?: boolean;
+  onSelect?: (work: Work) => void;
 }) {
   const { t, lang } = useLang();
   const w = t.works;
   const creator = showCreator ? getCreator(work.creatorId) : undefined;
 
   return (
-    <article className="group flex h-full flex-col border-2 border-ink bg-paper shadow-hard transition-transform hover:-translate-y-1">
+    <article
+      className="group flex cursor-pointer flex-col border-2 border-ink bg-paper shadow-hard transition-transform hover:-translate-y-1"
+      onClick={() => onSelect?.(work)}
+    >
       <div className="overflow-hidden border-b-2 border-ink">
-        <div className="transition-transform duration-500 group-hover:scale-105">
+        {work.image ? (
+          <Image
+            src={work.image}
+            alt={work.name.zh}
+            width={work.image.width}
+            height={work.image.height}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        ) : (
           <WorkArt work={work} />
-        </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-5">
         <span className="kicker text-magenta">{w.categories[work.category]}</span>
@@ -34,6 +47,7 @@ export function WorkCard({
           <Link
             href={`/creators/${creator.id}`}
             className="mt-3 inline-block font-mono text-xs text-ink/60 underline-offset-2 hover:text-magenta hover:underline"
+            onClick={e => e.stopPropagation()}
           >
             {w.by} {creator.name[lang]}
           </Link>

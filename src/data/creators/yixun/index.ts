@@ -1,5 +1,6 @@
 import type { Creator, Work } from "../_types";
 import avatarImg from "./images/avatar.jpg";
+import work01 from "./images/work_01.jpg";
 
 export const creator: Creator = {
   id: "yixun",
@@ -30,5 +31,6 @@ export const works: Work[] = [
     colors: ["var(--color-orange)", "var(--color-ink)", "var(--color-paper)"],
     pattern: "burst",
     glyph: "循",
+    image: work01,
   },
 ];

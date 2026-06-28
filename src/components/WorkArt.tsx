@@ -1,30 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { asset } from "@/lib/config";
 import type { Work } from "@/data/works";
 
-/**
- * Generated "poster" placeholder for a work. Driven entirely by data
- * (colors + pattern + glyph) so the gallery looks intentional before any real
- * photography exists. If `work.image` is set, the real image is shown instead.
- */
 export function WorkArt({ work }: { work: Work }) {
   const [bg, a, b] = work.colors;
-
-  if (work.image) {
-    return (
-      <div className="relative aspect-square w-full overflow-hidden">
-        <Image
-          src={asset(work.image)}
-          alt=""
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover"
-        />
-      </div>
-    );
-  }
 
   return (
     <div
