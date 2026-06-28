@@ -43,6 +43,7 @@ import { creator as kalare,     works as kalareWorks     } from "./kalare";
 import { creator as soul,       works as soulWorks       } from "./soul";
 import { creator as yixun,      works as yixunWorks      } from "./yixun";
 import { creator as bart,       works as bartWorks       } from "./Bart";
+import { creator as shan,       works as shanWorks       } from "./shan";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -71,6 +72,7 @@ import KalarePage       from "./kalare/page";
 import SoulPage         from "./soul/page";
 import YixunPage        from "./yixun/page";
 import BartPage         from "./Bart/page";
+import ShanPage         from "./shan/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -96,6 +98,7 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   soul:       SoulPage,         // Lookbook · 版权分区
   yixun:      YixunPage,        // Zine Collage / 拼贴画册
   bart:       BartPage,         // Candy Store Portrait / 糖果屋·真人版
+  shan:       ShanPage,         // Art Gallery Portrait / 展厅·真人版
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -114,6 +117,7 @@ export const creators: Creator[] = [
   soul,
   yixun,
   bart,
+  shan,
   // ── 文字字形头像 ────────────────────────────────────────────────────────────
   akuang,
   niijiang,
@@ -151,6 +155,7 @@ export const works: Work[] = [
   ...soulWorks,
   ...yixunWorks,
   ...bartWorks,
+  ...shanWorks,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];
