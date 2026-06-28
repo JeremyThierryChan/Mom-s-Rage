@@ -42,6 +42,7 @@ import { creator as co1dvvv,    works as co1dvvvWorks    } from "./co1dvvv";
 import { creator as kalare,     works as kalareWorks     } from "./kalare";
 import { creator as soul,       works as soulWorks       } from "./soul";
 import { creator as yixun,      works as yixunWorks      } from "./yixun";
+import { creator as bart,       works as bartWorks       } from "./bart";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -69,6 +70,7 @@ import Co1dvvvPage      from "./co1dvvv/page";
 import KalarePage       from "./kalare/page";
 import SoulPage         from "./soul/page";
 import YixunPage        from "./yixun/page";
+import BartPage         from "./bart/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -93,6 +95,7 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   kalare:     KalarePage,       // Lookbook / 系列画册
   soul:       SoulPage,         // Lookbook · 版权分区
   yixun:      YixunPage,        // Zine Collage / 拼贴画册
+  bart:       BartPage,         // Candy Store Portrait / 糖果屋·真人版
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -110,6 +113,7 @@ export const creators: Creator[] = [
   kalare,
   soul,
   yixun,
+  bart,
   // ── 文字字形头像 ────────────────────────────────────────────────────────────
   akuang,
   niijiang,
@@ -146,6 +150,7 @@ export const works: Work[] = [
   ...kalareWorks,
   ...soulWorks,
   ...yixunWorks,
+  ...bartWorks,
 ];
 
 export const categoryOrder: WorkCategory[] = ["ip", "clay", "apparel", "goods", "mix"];

@@ -8,6 +8,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useLang } from "@/lib/i18n";
 import { creator, works } from ".";
 import { Nav } from "@/components/Nav";
@@ -36,9 +37,37 @@ const workImages = [
 export default function Co1dvvvPage({ id: _id }: { id: string }) {
   const { t, lang } = useLang();
   const c = t.creators;
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox]);
 
   return (
     <>
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <Image
+            src={workImages[lightbox]!}
+            alt={works[lightbox]?.name[lang] ?? `作品 ${lightbox + 1}`}
+            width={workImages[lightbox]!.width}
+            height={workImages[lightbox]!.height}
+            style={{ maxHeight: "90vh", maxWidth: "90vw", width: "auto", height: "auto" }}
+          />
+          <button
+            className="absolute right-4 top-4 font-mono text-sm text-white/50 hover:text-white"
+            onClick={() => setLightbox(null)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
       <Nav subpage />
       <main className="bg-ink text-paper">
 
@@ -180,7 +209,11 @@ export default function Co1dvvvPage({ id: _id }: { id: string }) {
                     </div>
 
                     {/* Real photo thumbnail */}
-                    <div className="relative h-20 w-20 overflow-hidden border border-paper/10 group-hover:border-paper/20 sm:h-28 sm:w-28">
+                    <button
+                      className="relative h-20 w-20 cursor-zoom-in overflow-hidden border border-paper/10 group-hover:border-paper/20 sm:h-28 sm:w-28"
+                      onClick={() => setLightbox(i)}
+                      aria-label={`查看大图：${works[i]?.name[lang] ?? `作品 ${i + 1}`}`}
+                    >
                       <Image
                         src={img}
                         alt={works[i]?.name[lang] ?? `作品 ${i + 1}`}
@@ -192,7 +225,7 @@ export default function Co1dvvvPage({ id: _id }: { id: string }) {
                         className="pointer-events-none absolute inset-0 mix-blend-color opacity-0 transition-opacity group-hover:opacity-20"
                         style={{ background: creator.accent }}
                       />
-                    </div>
+                    </button>
                   </div>
                 </Reveal>
               ))}

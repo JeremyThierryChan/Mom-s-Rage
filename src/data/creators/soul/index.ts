@@ -7,8 +7,8 @@ export const creator: Creator = {
   handle: "@SOUL大魂",
   role: { zh: "视觉艺术家", en: "Visual Artist" },
   bio: {
-    zh: "在版权与创作之间找到自己的位置。",
-    en: "Finding a place between copyright and creation.",
+    zh: "黑白两色，喂养世间的奇异造物。",
+    en: "Black and white, feeding the strange creatures of this world.",
   },
   accent: "var(--color-electric)",
   glyph: "魂",
