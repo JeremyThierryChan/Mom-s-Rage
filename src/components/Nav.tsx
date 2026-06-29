@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 
-const SECTIONS = ["story", "why", "soul", "works", "process", "partners"] as const;
+const SECTIONS = ["story", "why", "soul", "works", "process", "partners", "blog"] as const;
 
 export function Nav({ subpage = false }: { subpage?: boolean }) {
   const { t, lang, toggle } = useLang();
