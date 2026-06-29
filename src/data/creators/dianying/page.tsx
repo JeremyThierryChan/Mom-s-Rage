@@ -154,7 +154,7 @@ export default function FilmPage({ id: _id }: { id: string }) {
                               ¥{work.price}
                             </span>
                             <Link
-                              href="/partners"
+                              href="/contact"
                               className="border px-4 py-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-paper/60 transition-colors hover:text-paper"
                               style={{ borderColor: creator.accent + "50" }}
                             >

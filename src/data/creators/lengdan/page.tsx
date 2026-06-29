@@ -125,7 +125,7 @@ export default function TerminalPage({ id: _id }: { id: string }) {
                       {work.forSale ? (
                         <span style={{ color: acid }}>
                           ¥{work.price}
-                          <Link href="/partners" className="ml-4 border border-paper/20 px-2 py-0.5 text-paper/50 hover:text-paper transition-colors">
+                          <Link href="/contact" className="ml-4 border border-paper/20 px-2 py-0.5 text-paper/50 hover:text-paper transition-colors">
                             {c.buy}
                           </Link>
                         </span>

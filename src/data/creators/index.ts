@@ -44,6 +44,9 @@ import { creator as soul,       works as soulWorks       } from "./soul";
 import { creator as yixun,      works as yixunWorks      } from "./yixun";
 import { creator as bart,       works as bartWorks       } from "./Bart";
 import { creator as shan,       works as shanWorks       } from "./shan";
+import { creator as lcbzyc,    works as lcbzycWorks    } from "./lcbzyc";
+import { creator as zhenwei,   works as zhenweiWorks   } from "./zhenwei";
+import { creator as zu0king_z, works as zu0king_zWorks } from "./zu0king_z";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -73,6 +76,9 @@ import SoulPage         from "./soul/page";
 import YixunPage        from "./yixun/page";
 import BartPage         from "./Bart/page";
 import ShanPage         from "./shan/page";
+import LcbzycPage    from "./lcbzyc/page";
+import ZhenweiPage   from "./zhenwei/page";
+import Zu0kingZPage  from "./zu0king_z/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -99,6 +105,9 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   yixun:      YixunPage,        // Zine Collage / 拼贴画册
   bart:       BartPage,         // Candy Store Portrait / 糖果屋·真人版
   shan:       ShanPage,         // Art Gallery Portrait / 展厅·真人版
+  lcbzyc:    LcbzycPage,    // Brutalist Portrait / 粗野宣言·真人版
+  zhenwei:   ZhenweiPage,   // Blackout Poster Portrait / 夜店海报·真人版
+  zu0king_z: Zu0kingZPage,  // Art Gallery Portrait / 展厅·真人版
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -118,6 +127,9 @@ export const creators: Creator[] = [
   yixun,
   bart,
   shan,
+  lcbzyc,
+  zhenwei,
+  zu0king_z,
   // ── 文字字形头像 ────────────────────────────────────────────────────────────
   akuang,
   niijiang,
@@ -147,6 +159,9 @@ export const works: Work[] = [
   ...yixunWorks,
   ...bartWorks,
   ...shanWorks,
+  ...lcbzycWorks,
+  ...zhenweiWorks,
+  ...zu0king_zWorks,
   // ── 示例创作者（虚构内容）──────────────────────────────────────────────────
   ...akuangWorks,
   ...niijiangWorks,

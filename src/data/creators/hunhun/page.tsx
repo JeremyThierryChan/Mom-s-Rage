@@ -99,7 +99,7 @@ export default function BrutalistPage({ id: _id }: { id: string }) {
                       <div className="flex flex-col gap-0.5">
                         <span className="font-display text-lg">¥{work.price}</span>
                         <Link
-                          href="/partners"
+                          href="/contact"
                           className="font-mono text-[0.55rem] uppercase tracking-wider text-ink/50 underline hover:text-ink"
                         >
                           {c.buy}

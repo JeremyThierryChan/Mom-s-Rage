@@ -130,7 +130,7 @@ export default function EditorialPage({ id: _id }: { id: string }) {
                         <div className="mt-4 flex items-center justify-between">
                           <span className="font-display text-2xl">¥{work.price}</span>
                           <Link
-                            href="/partners"
+                            href="/contact"
                             className="bg-ink px-4 py-2 font-mono text-xs font-bold uppercase text-acid transition-transform hover:-translate-y-0.5"
                           >
                             {c.buy}

@@ -242,7 +242,7 @@ export default function ShanPage({ id: _id }: { id: string }) {
                                 ¥{work.price}
                               </span>
                               <Link
-                                href="/partners"
+                                href="/contact"
                                 className="border px-4 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors hover:bg-ink hover:text-paper"
                                 style={{ borderColor: creator.accent, color: creator.accent }}
                               >

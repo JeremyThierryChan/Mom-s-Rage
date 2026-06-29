@@ -144,7 +144,7 @@ export default function BlackoutPage({ id: _id }: { id: string }) {
                               ¥{work.price}
                             </span>
                             <Link
-                              href="/partners"
+                              href="/contact"
                               className="border px-4 py-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-paper/60 transition-colors hover:text-paper"
                               style={{ borderColor: creator.accent + "60" }}
                             >
@@ -203,7 +203,7 @@ export default function BlackoutPage({ id: _id }: { id: string }) {
                             ¥{work.price}
                           </span>
                           <Link
-                            href="/partners"
+                            href="/contact"
                             className="px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-ink transition-colors"
                             style={{ background: creator.accent }}
                           >

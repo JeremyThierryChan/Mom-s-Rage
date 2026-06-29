@@ -182,9 +182,9 @@ export function Works() {
                     <div>
                       <p className="kicker text-ink/50">{w.priceFrom}</p>
                       <p className="font-display mt-1 text-4xl">¥{detailWork.price}</p>
-                      <button className="mt-4 bg-ink px-5 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-paper transition-colors hover:bg-magenta">
+                      <Link href="/contact" className="mt-4 inline-block bg-ink px-5 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-paper transition-colors hover:bg-magenta">
                         购买 / BUY
-                      </button>
+                      </Link>
                     </div>
                   ) : (
                     <span className="border-2 border-ink px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-wide">

@@ -108,7 +108,7 @@ export default function CandyPage({ id: _id }: { id: string }) {
                               </span>
                             </div>
                             <Link
-                              href="/partners"
+                              href="/contact"
                               className="rounded-full border-2 border-ink bg-ink px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-magenta transition-colors hover:bg-transparent hover:text-ink"
                             >
                               {c.buy}

@@ -97,7 +97,7 @@ export default function ZinePage({ id: _id }: { id: string }) {
                           <>
                             <span className="font-display text-xl">¥{work.price}</span>
                             <Link
-                              href="/partners"
+                              href="/contact"
                               className="border-2 border-ink bg-ink px-3 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-acid"
                             >
                               {c.buy}

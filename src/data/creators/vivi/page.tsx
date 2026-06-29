@@ -137,7 +137,7 @@ export default function ViviPage({ id: _id }: { id: string }) {
                             {work.forSale ? (
                               <div className="flex items-center justify-between">
                                 <span className="font-display text-2xl">¥{work.price}</span>
-                                <Link href="/partners" className="border-2 border-ink bg-ink px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-paper transition-colors hover:bg-paper hover:text-ink">
+                                <Link href="/contact" className="border-2 border-ink bg-ink px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-paper transition-colors hover:bg-paper hover:text-ink">
                                   {c.buy}
                                 </Link>
                               </div>

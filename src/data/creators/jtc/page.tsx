@@ -418,7 +418,7 @@ export default function EditorialPortraitPage({ id: _id }: { id: string }) {
                             )}
                           </span>
                           <Link
-                            href="/partners"
+                            href="/contact"
                             className="bg-ink px-4 py-2 font-mono text-xs font-bold uppercase text-acid transition-transform hover:-translate-y-0.5"
                           >
                             {c.buy}

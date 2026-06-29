@@ -202,7 +202,7 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
                               ¥{work.price}
                             </span>
                             <Link
-                              href="/partners"
+                              href="/contact"
                               className="border border-paper/20 px-4 py-2 font-mono text-[0.65rem] uppercase tracking-wider text-paper/60 transition-colors hover:border-paper hover:text-paper"
                             >
                               {c.buy}
