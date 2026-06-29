@@ -1,0 +1,337 @@
+import type { Creator, Work } from "../_types";
+import avatarImg from "./images/avatar.jpg";
+import work01 from "./images/work_01.jpg";
+import work02 from "./images/work_02.jpg";
+import work03 from "./images/work_03.jpg";
+import work04 from "./images/work_04.jpg";
+import work05 from "./images/work_05.jpg";
+import work06 from "./images/work_06.jpg";
+import work07 from "./images/work_07.jpg";
+import work08 from "./images/work_08.jpg";
+import work09 from "./images/work_09.jpg";
+import work10 from "./images/work_10.jpg";
+import work11 from "./images/work_11.jpg";
+import work12 from "./images/work_12.jpg";
+import work13 from "./images/work_13.jpg";
+import work14 from "./images/work_14.png";
+import work15 from "./images/work_15.png";
+import work16 from "./images/work_16.png";
+import work17 from "./images/work_17.png";
+import work18 from "./images/work_18.png";
+import work19 from "./images/work_19.jpg";
+import work20 from "./images/work_20.jpg";
+import work21 from "./images/work_21.jpg";
+
+export const creator: Creator = {
+  id: "HcuS",
+  name: { zh: "HcuS", en: "HcuS" },
+  handle: "@HcuS",
+  role: { zh: "陶艺师·插画师", en: "Ceramicist · Illustrator" },
+  bio: {
+    zh: "游走于陶土与纸面之间，把神秘学、自然标本与暗黑美学溶进器物与版画。每一件都是某种仪式的残留物。",
+    en: "Moving between clay and paper — dissolving occult symbols, natural specimens, and dark aesthetics into vessels and prints. Each piece is the residue of some ritual.",
+  },
+  accent: "var(--color-orange)",
+  glyph: "秘",
+  avatar: avatarImg,
+};
+
+export const works: Work[] = [
+  {
+    id: "HcuS-01",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "密龛", en: "Sacred Reliquary" },
+    tagline: {
+      zh: "Art Nouveau 曲线与东方器型的融合，釉色流动如生命液体。",
+      en: "Art Nouveau curves fused with Eastern vessel form — glaze flowing like living liquid.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-orange)", "var(--color-electric)", "var(--color-paper)"],
+    pattern: "blob",
+    glyph: "龛",
+    images: [work01, work02, work03],
+  },
+  {
+    id: "HcuS-02",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "三祭", en: "Three Altars" },
+    tagline: {
+      zh: "三种形态，三种信仰。放在手心，刚好是一次祈祷的重量。",
+      en: "Three forms, three faiths. Held in the palm — exactly the weight of a prayer.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-orange)", "var(--color-paper)", "var(--color-ink)"],
+    pattern: "burst",
+    glyph: "祭",
+    image: work04,
+  },
+  {
+    id: "HcuS-03",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "叶语", en: "Leaf Dialects" },
+    tagline: {
+      zh: "五片叶子，五种釉，五段对话。每一片都是不同植物记忆的转录。",
+      en: "Five leaves, five glazes, five conversations. Each one a transcription of a different plant's memory.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-paper)", "var(--color-orange)", "var(--color-electric)"],
+    pattern: "scribble",
+    glyph: "叶",
+    image: work05,
+  },
+  {
+    id: "HcuS-04",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "标本柜", en: "Specimen Cabinet" },
+    tagline: {
+      zh: "把所有小件平铺开来，像博物馆里刚到的一批藏品。叶形盘、星形吊坠、青蛙扣、彩绘瓷砖。",
+      en: "All the small pieces laid out like a new museum acquisition. Leaf dishes, star pendants, frog clasps, painted tiles.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-orange)", "var(--color-ink)", "var(--color-paper)"],
+    pattern: "grid",
+    glyph: "藏",
+    image: work06,
+  },
+  {
+    id: "HcuS-05",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "暗章", en: "Dark Medallions" },
+    tagline: {
+      zh: "四枚椭圆章——玫瑰骷髅、荆棘鸟、白鸽与暗翼。哥特祭坛风格的瓷上绘画。",
+      en: "Four oval medallions — rose skulls, thorned birds, white doves, dark wings. Gothic altar aesthetics in ceramic paint.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-ink)", "var(--color-magenta)", "var(--color-paper)"],
+    pattern: "burst",
+    glyph: "章",
+    image: work07,
+  },
+  {
+    id: "HcuS-06",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "午夜祭台", en: "Midnight Altar" },
+    tagline: {
+      zh: "红与黑的陶器群像，白鸽穿过枯枝，眼睛睁着，心脏在旁边。",
+      en: "Red and black ceramics gathered — white doves through bare branches, eyes open, heart lying nearby.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-magenta)", "var(--color-ink)", "var(--color-paper)"],
+    pattern: "scribble",
+    glyph: "夜",
+    image: work08,
+  },
+  {
+    id: "HcuS-07",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "鬼物杂陈", en: "Cabinet of Ghosts" },
+    tagline: {
+      zh: "面具、骨刀吊坠、星形挂件、流体人形——聚在黑色丝绒上，像一场没有人来的拍卖。",
+      en: "Mask, bone-blade pendant, star charms, fluid figures — gathered on black velvet like an auction with no bidders.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-paper)", "var(--color-electric)", "var(--color-ink)"],
+    pattern: "blob",
+    glyph: "鬼",
+    image: work09,
+  },
+  {
+    id: "HcuS-08",
+    creatorId: "HcuS",
+    category: "mix",
+    name: { zh: "三器", en: "Three Objects" },
+    tagline: {
+      zh: "彩蝶入镜、曼陀罗星图、卷轴残页——三件物什，三种时间尺度。",
+      en: "A framed butterfly, a mandala star chart, a fragment of scroll — three objects on three timescales.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-orange)", "var(--color-paper)", "var(--color-ink)"],
+    pattern: "grid",
+    glyph: "器",
+    image: work10,
+  },
+  {
+    id: "HcuS-09",
+    creatorId: "HcuS",
+    category: "clay",
+    name: { zh: "锋刃", en: "The Blade" },
+    tagline: {
+      zh: "琥珀色古典镶框内，一把蛇身之刃。瓷绘、木框、红宝石眼。",
+      en: "Inside an amber antique frame — a serpent-bodied blade in ceramic paint, ruby-eyed.",
+    },
+    price: 0,
+    forSale: true,
+    priceOnInquiry: true,
+    colors: ["var(--color-orange)", "var(--color-electric)", "var(--color-ink)"],
+    pattern: "burst",
+    glyph: "刃",
+    image: work11,
+  },
+  {
+    id: "HcuS-10",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "三扇门", en: "Three Gates" },
+    tagline: {
+      zh: "哥特拱门、双手祈祷、燃烧的星——画面中央是一次无声的宗教审判。",
+      en: "Gothic arches, praying hands, a burning star — a silent tribunal at the center of the image.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-ink)", "var(--color-orange)", "var(--color-magenta)"],
+    pattern: "grid",
+    glyph: "门",
+    image: work12,
+  },
+  {
+    id: "HcuS-11",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "解剖异志", en: "Anatomy of the Strange" },
+    tagline: {
+      zh: "假想生物的解剖图鉴。它们有名字，有器官，有禁止符号，但没有出处。",
+      en: "An anatomical field guide to imagined creatures. They have names, organs, warning signs — but no origin.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-magenta)", "var(--color-orange)", "var(--color-ink)"],
+    pattern: "scribble",
+    glyph: "异",
+    image: work13,
+  },
+  {
+    id: "HcuS-12",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "乌骸", en: "Bone Bird" },
+    tagline: {
+      zh: "鸟骸与玫瑰之间是两个人的手。版画套色，黑蓝底色，死亡是一种优雅。",
+      en: "Between the bird skull and the roses — two pairs of hands. Layered print colors; death, here, is a kind of elegance.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-electric)", "var(--color-orange)", "var(--color-ink)"],
+    pattern: "burst",
+    glyph: "骸",
+    image: work14,
+  },
+  {
+    id: "HcuS-13",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "圣窗", en: "Sacred Window" },
+    tagline: {
+      zh: "哥特玫瑰窗改编，每一格都是一个神兽，骷髅、骸马、怒狮。版画，黑底金彩。",
+      en: "A Gothic rose window reinterpreted — each segment a sacred beast: skeleton, bone horse, enraged lion. Print on black, gold-lit.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-orange)", "var(--color-magenta)", "var(--color-ink)"],
+    pattern: "grid",
+    glyph: "窗",
+    image: work15,
+  },
+  {
+    id: "HcuS-14",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "冬日祈诵", en: "Winter Prayer" },
+    tagline: {
+      zh: "雪中的骨骼人手持画框，框内是另一棵树。祈祷是为了谁？",
+      en: "A skeletal figure in the snow holds up a framed painting of another tree. For whom is the prayer?",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-paper)", "var(--color-electric)", "var(--color-ink)"],
+    pattern: "scribble",
+    glyph: "祷",
+    image: work16,
+  },
+  {
+    id: "HcuS-15",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "林间", en: "In the Woods" },
+    tagline: {
+      zh: "橙红底色，鸟骨与叶脉重叠，死亡和生长共享一根枝条。",
+      en: "Orange-red ground — bird bones and leaf veins overlapping, death and growth sharing a single branch.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-orange)", "var(--color-electric)", "var(--color-ink)"],
+    pattern: "blob",
+    glyph: "林",
+    image: work17,
+  },
+  {
+    id: "HcuS-16",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "鹭心", en: "Heron Heart" },
+    tagline: {
+      zh: "蓝底的苍鹭，头顶一颗离体的心脏。是猎物还是祭品，取决于谁在看。",
+      en: "A heron on deep blue, with a displaced heart above its head. Prey or offering — depends on who's watching.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-electric)", "var(--color-orange)", "var(--color-ink)"],
+    pattern: "burst",
+    glyph: "鹭",
+    image: work18,
+  },
+  {
+    id: "HcuS-17",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "双生", en: "Dual Birth" },
+    tagline: {
+      zh: "同一张脸，一半是暗影，一半是光晕。丙烯水彩混合，边界在呼吸。",
+      en: "One face — half shadow, half halo. Acrylic and watercolor mixed; the boundary breathes.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-electric)", "var(--color-orange)", "var(--color-magenta)"],
+    pattern: "blob",
+    glyph: "生",
+    image: work19,
+  },
+  {
+    id: "HcuS-18",
+    creatorId: "HcuS",
+    category: "ip",
+    name: { zh: "灵王", en: "Spirit King" },
+    tagline: {
+      zh: "双联版：墨稿与彩稿。头顶「霊」字、身镶神煞符印，十二宫环绕。两种光线，一个存在。",
+      en: "Diptych: ink draft and colored version. 'Spirit' crowned, occult seals embedded in the body, the zodiac surrounding. Two lights, one being.",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-magenta)", "var(--color-orange)", "var(--color-ink)"],
+    pattern: "burst",
+    glyph: "霊",
+    images: [work20, work21],
+  },
+];

@@ -48,6 +48,8 @@ import { creator as lcbzyc,        works as lcbzycWorks        } from "./lcbzyc"
 import { creator as zhenwei,       works as zhenweiWorks       } from "./zhenwei";
 import { creator as zu0king_z,     works as zu0king_zWorks     } from "./zu0king_z";
 import { creator as zhihuannihong, works as zhihuannihongWorks } from "./zhihuannihong";
+import { creator as HcuS,          works as HcuSWorks          } from "./HcuS";
+import { creator as zhiyu,         works as zhiyuWorks         } from "./zhiyu";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -81,6 +83,8 @@ import LcbzycPage          from "./lcbzyc/page";
 import ZhenweiPage         from "./zhenwei/page";
 import Zu0kingZPage        from "./zu0king_z/page";
 import ZhihuannihongPage   from "./zhihuannihong/page";
+import HcuSPage             from "./HcuS/page";
+import ZhiyuPage            from "./zhiyu/page";
 
 const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   akuang:   AkuangPage,   // Editorial / 杂志双栏
@@ -111,6 +115,8 @@ const PAGE_REGISTRY: Partial<Record<string, ComponentType<{ id: string }>>> = {
   zhenwei:         ZhenweiPage,         // Blackout Poster Portrait / 夜店海报·真人版
   zu0king_z:       Zu0kingZPage,        // Art Gallery Portrait / 展厅·真人版
   zhihuannihong:   ZhihuannihongPage,   // Neon Archive / 致幻档案
+  HcuS:            HcuSPage,            // Cabinet of Curiosities / 奇物柜
+  zhiyu:           ZhiyuPage,           // Design Studio / 设计工作室
 };
 // ── End page layout registry ──────────────────────────────────────────────────
 
@@ -134,6 +140,8 @@ export const creators: Creator[] = [
   zhenwei,
   zu0king_z,
   zhihuannihong,
+  HcuS,
+  zhiyu,
   // ── 文字字形头像 ────────────────────────────────────────────────────────────
   akuang,
   niijiang,
@@ -167,6 +175,8 @@ export const works: Work[] = [
   ...zhenweiWorks,
   ...zu0king_zWorks,
   ...zhihuannihongWorks,
+  ...HcuSWorks,
+  ...zhiyuWorks,
   // ── 示例创作者（虚构内容）──────────────────────────────────────────────────
   ...akuangWorks,
   ...niijiangWorks,
