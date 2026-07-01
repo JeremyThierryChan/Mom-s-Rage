@@ -24,7 +24,18 @@ import work07 from "./images/work_07.jpg";
 import work08 from "./images/work_08.jpg";
 import work09 from "./images/work_09.jpg";
 
+import outfit01 from "./images/outfit_01.jpg";
+import outfit02 from "./images/outfit_02.png";
+import outfit03 from "./images/outfit_03.jpg";
+import outfit04 from "./images/outfit_04.jpg";
+import outfit05 from "./images/outfit_05.jpg";
+import outfit06 from "./images/outfit_06.jpg";
+import outfit07 from "./images/outfit_07.jpg";
+import outfit08 from "./images/outfit_08.jpg";
+import outfit09 from "./images/outfit_09.jpg";
+
 const workImages = [work01, work02, work03, work04, work05, work06, work07, work08, work09];
+const outfitImages = [outfit01, outfit02, outfit03, outfit04, outfit05, outfit06, outfit07, outfit08, outfit09];
 
 // Slight tilts for polaroid feel
 const TILTS = [-1.5, 1.2, -0.8, 2, -1.8, 0.9, -2.2, 1.5, -0.6];
@@ -33,6 +44,7 @@ export default function BartPage({ id: _id }: { id: string }) {
   const { t, lang } = useLang();
   const c = t.creators;
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [outfitLightbox, setOutfitLightbox] = useState<number | null>(null);
 
   useEffect(() => {
     if (lightbox === null) return;
@@ -44,6 +56,17 @@ export default function BartPage({ id: _id }: { id: string }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightbox]);
+
+  useEffect(() => {
+    if (outfitLightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOutfitLightbox(null);
+      if (e.key === "ArrowRight") setOutfitLightbox((i) => i !== null ? Math.min(i + 1, outfitImages.length - 1) : null);
+      if (e.key === "ArrowLeft")  setOutfitLightbox((i) => i !== null ? Math.max(i - 1, 0) : null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [outfitLightbox]);
 
   return (
     <>
@@ -79,6 +102,42 @@ export default function BartPage({ id: _id }: { id: string }) {
           >✕</button>
           <p className="absolute bottom-4 font-mono text-xs text-white/30">
             {lightbox + 1} / {workImages.length}
+          </p>
+        </div>
+      )}
+
+      {/* Outfit lightbox */}
+      {outfitLightbox !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 p-4"
+          onClick={() => setOutfitLightbox(null)}
+        >
+          <Image
+            src={outfitImages[outfitLightbox]!}
+            alt={`穿搭 ${outfitLightbox + 1}`}
+            width={outfitImages[outfitLightbox]!.width}
+            height={outfitImages[outfitLightbox]!.height}
+            style={{ maxHeight: "90vh", maxWidth: "90vw", width: "auto", height: "auto" }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {outfitLightbox > 0 && (
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-3xl text-white/40 hover:text-white"
+              onClick={(e) => { e.stopPropagation(); setOutfitLightbox((i) => i! - 1); }}
+            >‹</button>
+          )}
+          {outfitLightbox < outfitImages.length - 1 && (
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 font-mono text-3xl text-white/40 hover:text-white"
+              onClick={(e) => { e.stopPropagation(); setOutfitLightbox((i) => i! + 1); }}
+            >›</button>
+          )}
+          <button
+            className="absolute right-4 top-4 font-mono text-sm text-white/40 hover:text-white"
+            onClick={() => setOutfitLightbox(null)}
+          >✕</button>
+          <p className="absolute bottom-4 font-mono text-xs text-white/30">
+            {outfitLightbox + 1} / {outfitImages.length}
           </p>
         </div>
       )}
@@ -186,6 +245,44 @@ export default function BartPage({ id: _id }: { id: string }) {
                       >
                         {creator.handle} — {String(i + 1).padStart(2, "0")}
                       </p>
+                    </div>
+                  </button>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Outfit showcase — masonry style ───────────────────── */}
+        <section className="bg-ink py-20 sm:py-28">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <Reveal>
+              <div className="mb-12 flex items-baseline justify-between border-b-4 border-paper/20 pb-4">
+                <h2 className="font-display text-4xl uppercase text-paper sm:text-5xl">
+                  {c.outfitTitle}
+                </h2>
+                <span className="font-mono text-xs text-paper/40">{outfitImages.length} photos</span>
+              </div>
+            </Reveal>
+
+            <div className="columns-2 gap-6 sm:columns-3 sm:gap-8">
+              {outfitImages.map((img, i) => (
+                <Reveal key={i} delay={i * 0.05}>
+                  <button
+                    className="group mb-6 block w-full cursor-zoom-in break-inside-avoid sm:mb-8"
+                    onClick={() => setOutfitLightbox(i)}
+                    aria-label={`查看穿搭大图 ${i + 1}`}
+                  >
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={img}
+                        alt={`穿搭 ${i + 1}`}
+                        width={img.width}
+                        height={img.height}
+                        sizes="(max-width: 640px) 45vw, 30vw"
+                        style={{ width: "100%", height: "auto", display: "block" }}
+                        className="transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
                     </div>
                   </button>
                 </Reveal>

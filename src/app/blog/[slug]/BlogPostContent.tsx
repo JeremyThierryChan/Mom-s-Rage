@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { asset } from "@/lib/config";
 import type { Post } from "@/data/blog";
 
 function formatDate(iso: string, lang: "zh" | "en"): string {
@@ -36,20 +37,46 @@ export function BlogPostContent({ post }: { post: Post }) {
             <span className="border border-ink/20 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-ink/40">
               {post.category[lang]}
             </span>
+            {post.status && (
+              <span className="border border-acid bg-acid/20 px-2 py-0.5 font-mono text-[0.6rem] font-bold uppercase tracking-wider text-ink">
+                {post.status[lang]}
+              </span>
+            )}
             <span className="font-mono text-xs text-ink/30">
               {formatDate(post.date, lang)}
             </span>
             {post.author && (
-              <span className="font-mono text-xs text-ink/30">· {post.author}</span>
+              <span className="font-mono text-xs text-ink/30">
+                ·{" "}
+                {post.authorId ? (
+                  <Link href={`/creators/${post.authorId}`} className="underline transition-colors hover:text-ink">
+                    {post.author}
+                  </Link>
+                ) : (
+                  post.author
+                )}
+              </span>
             )}
           </div>
 
-          <h1
-            className="mt-5 font-display text-4xl leading-tight sm:text-5xl md:text-6xl"
-            style={{ textTransform: "none" }}
-          >
-            {post.title[lang]}
-          </h1>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <h1
+              className="font-display text-4xl leading-tight sm:text-5xl md:text-6xl"
+              style={{ textTransform: "none" }}
+            >
+              {post.title[lang]}
+            </h1>
+
+            {post.download && (
+              <a
+                href={asset(post.download.href)}
+                download
+                className="inline-block shrink-0 bg-acid px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-hard transition-transform hover:-translate-y-1"
+              >
+                ↓ {post.download.label[lang]}
+              </a>
+            )}
+          </div>
 
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/50 sm:text-lg">
             {post.excerpt[lang]}
@@ -68,6 +95,21 @@ export function BlogPostContent({ post }: { post: Post }) {
                 >
                   {block.text[lang]}
                 </h2>
+              );
+            }
+            if (block.type === "p-link") {
+              return (
+                <p key={i} className="mb-5 text-base leading-relaxed text-ink/75 sm:text-lg">
+                  {block.before[lang]}
+                  <a
+                    href={asset(block.href)}
+                    download
+                    className="font-bold text-ink underline decoration-magenta decoration-2 underline-offset-2 transition-colors hover:text-magenta"
+                  >
+                    {block.linkText[lang]}
+                  </a>
+                  {block.after[lang]}
+                </p>
               );
             }
             if (block.type === "quote") {

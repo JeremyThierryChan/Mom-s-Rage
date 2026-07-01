@@ -50,6 +50,7 @@ import { creator as zu0king_z,     works as zu0king_zWorks     } from "./zu0king
 import { creator as zhihuannihong, works as zhihuannihongWorks } from "./zhihuannihong";
 import { creator as HcuS,          works as HcuSWorks          } from "./HcuS";
 import { creator as zhiyu,         works as zhiyuWorks         } from "./zhiyu";
+import { creator as glengoyle,     works as glengoyleWorks     } from "./glengoyle";
 // ── End data registry ─────────────────────────────────────────────────────────
 
 // ── Page layout registry ──────────────────────────────────────────────────────
@@ -142,6 +143,7 @@ export const creators: Creator[] = [
   zhihuannihong,
   HcuS,
   zhiyu,
+  glengoyle,
   // ── 文字字形头像 ────────────────────────────────────────────────────────────
   akuang,
   niijiang,
@@ -177,6 +179,7 @@ export const works: Work[] = [
   ...zhihuannihongWorks,
   ...HcuSWorks,
   ...zhiyuWorks,
+  ...glengoyleWorks,
   // ── 示例创作者（虚构内容）──────────────────────────────────────────────────
   ...akuangWorks,
   ...niijiangWorks,

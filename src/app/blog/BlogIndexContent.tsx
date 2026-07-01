@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { Nav } from "@/components/Nav";
@@ -18,6 +19,17 @@ function formatDate(iso: string, lang: "zh" | "en"): string {
 export function BlogIndexContent() {
   const { t, lang } = useLang();
   const b = t.blog;
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const categories = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const post of posts) seen.set(post.category.zh, post.category[lang]);
+    return Array.from(seen, ([key, label]) => ({ key, label }));
+  }, [lang]);
+
+  const filteredPosts = activeCategory
+    ? posts.filter((post) => post.category.zh === activeCategory)
+    : posts;
 
   return (
     <>
@@ -33,11 +45,40 @@ export function BlogIndexContent() {
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-ink/55 sm:text-base">
             {b.lead}
           </p>
+
+          {/* Category filter buttons */}
+          <div className="mt-8 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => setActiveCategory(null)}
+              className={`border px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors ${
+                activeCategory === null
+                  ? "border-ink bg-ink text-paper"
+                  : "border-ink/20 text-ink/50 hover:border-ink/40 hover:text-ink"
+              }`}
+            >
+              {b.filterAll}
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat.key}
+                type="button"
+                onClick={() => setActiveCategory(cat.key)}
+                className={`border px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors ${
+                  activeCategory === cat.key
+                    ? "border-ink bg-ink text-paper"
+                    : "border-ink/20 text-ink/50 hover:border-ink/40 hover:text-ink"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </section>
 
         {/* ── Post list ──────────────────────────────────────────── */}
         <section className="divide-y-2 divide-ink/10">
-          {posts.map((post, i) => (
+          {filteredPosts.map((post, i) => (
             <Reveal key={post.slug} delay={i * 0.04}>
               <Link
                 href={`/blog/${post.slug}`}
@@ -48,9 +89,19 @@ export function BlogIndexContent() {
                   <p className="font-mono text-xs text-ink/35">
                     {formatDate(post.date, lang)}
                   </p>
-                  <span className="mt-1.5 inline-block border border-ink/20 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-ink/40">
-                    {post.category[lang]}
-                  </span>
+                  <div className="mt-1.5 flex flex-wrap gap-1.5">
+                    <span className="inline-block border border-ink/20 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-ink/40">
+                      {post.category[lang]}
+                    </span>
+                    {post.status && (
+                      <span className="inline-block border border-acid bg-acid/20 px-2 py-0.5 font-mono text-[0.6rem] font-bold uppercase tracking-wider text-ink">
+                        {post.status[lang]}
+                      </span>
+                    )}
+                  </div>
+                  {post.author && (
+                    <p className="mt-1.5 font-mono text-[0.65rem] text-ink/30">{post.author}</p>
+                  )}
                 </div>
 
                 {/* Title + excerpt */}
@@ -69,7 +120,7 @@ export function BlogIndexContent() {
             </Reveal>
           ))}
 
-          {posts.length === 0 && (
+          {filteredPosts.length === 0 && (
             <p className="px-6 py-16 text-center font-mono text-sm text-ink/30 sm:px-10">
               {b.empty}
             </p>

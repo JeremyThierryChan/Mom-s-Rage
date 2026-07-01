@@ -199,6 +199,7 @@ const zh = {
     emptyShop: "暂时没有在售商品 — 但作品都在上面。",
     moreTitle: "其他合伙人",
     worksCount: "件作品",
+    outfitTitle: "穿搭展示",
   },
   process: {
     kicker: "05 — 怎么做",
@@ -290,6 +291,17 @@ const zh = {
       { role: "管理员", name: "杰蒂陈", id: "JeremyTC" },
       { role: "管理员", name: "刘抖音", id: "843725435" },
     ],
+    wechat: {
+      groupPlatform: "微信群聊",
+      groups: ["Mom's Rage妈见打微信分部", "Mom's Rage网站信息收集"],
+      joinNote: "加管理员微信，说明想进哪个群",
+      membersTitle: "群管理",
+      members: [
+        { role: "管理员", name: "古", id: "yakun0028" },
+        { role: "管理员", name: "杰蒂陈", id: "JeremyThierryChan" },
+        { role: "管理员", name: "刘微信", id: "yj69803217" },
+      ],
+    },
   },
   blog: {
     kicker: "日志",
@@ -298,6 +310,7 @@ const zh = {
     readMore: "继续读",
     backToBlog: "回到日志",
     empty: "还没有文章，很快会有的。",
+    filterAll: "全部",
   },
   footer: {
     tagline: "那个让不敢表达的人，敢表达的牌子。",
@@ -506,6 +519,7 @@ const en: Dict = {
     emptyShop: "Nothing for sale right now — but the work is all above.",
     moreTitle: "Other partners",
     worksCount: "works",
+    outfitTitle: "Style Diary",
   },
   process: {
     kicker: "05 — Process",
@@ -603,6 +617,17 @@ const en: Dict = {
       { role: "Admin", name: "杰蒂陈", id: "JeremyTC" },
       { role: "Admin", name: "刘抖音", id: "843725435" },
     ],
+    wechat: {
+      groupPlatform: "WeChat Group Chat",
+      groups: ["Mom's Rage妈见打微信分部", "Mom's Rage网站信息收集"],
+      joinNote: "Add an admin on WeChat and say which group you want to join",
+      membersTitle: "Admins",
+      members: [
+        { role: "Admin", name: "古", id: "yakun0028" },
+        { role: "Admin", name: "杰蒂陈", id: "JeremyThierryChan" },
+        { role: "Admin", name: "刘微信", id: "yj69803217" },
+      ],
+    },
   },
   blog: {
     kicker: "Journal",
@@ -611,6 +636,7 @@ const en: Dict = {
     readMore: "Read more",
     backToBlog: "Back to journal",
     empty: "No posts yet — soon.",
+    filterAll: "All",
   },
   footer: {
     tagline: "The brand that makes the silenced speak.",

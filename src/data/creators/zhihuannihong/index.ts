@@ -7,6 +7,9 @@ import work04 from "./images/work_04.jpg";
 import work05 from "./images/work_05.jpg";
 import work06 from "./images/work_06.jpg";
 import work07 from "./images/work_07.jpg";
+import work08 from "./images/铸剑-干将莫邪.jpg";
+import work09 from "./images/铸剑-纯钧.jpg";
+import work10 from "./images/铸剑-轩辕.jpg";
 
 export const creator: Creator = {
   id: "zhihuannihong",
@@ -134,5 +137,53 @@ export const works: Work[] = [
     pattern: "grid",
     glyph: "曲",
     image: work07,
+  },
+  {
+    id: "zhihuannihong-08",
+    creatorId: "zhihuannihong",
+    category: "apparel",
+    name: { zh: "铸剑·干将莫邪", en: "Forging the Blade · Gan Jiang & Mo Ye" },
+    tagline: {
+      zh: "「采五山之铁精，六合之金英，以铸铁剑。三月不成。莫邪断发剪爪，投于炉中，使童男童女三百人鼓橐装炭，金铁乃濡，遂以成剑。」",
+      en: "\"Iron's essence from the five mountains, gold's brilliance from the six directions — to forge the blade. Three months, still unfinished. Mo Ye cut her hair and nails and cast herself into the furnace; three hundred hands stoked the coals until metal turned to liquid. Only then was the sword done.\"",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-orange)", "var(--color-ink)", "var(--color-electric)"],
+    pattern: "scribble",
+    glyph: "邪",
+    image: work08,
+  },
+  {
+    id: "zhihuannihong-09",
+    creatorId: "zhihuannihong",
+    category: "apparel",
+    name: { zh: "铸剑·纯钧", en: "Forging the Blade · Chun Jun" },
+    tagline: {
+      zh: "「手振拂扬，其华捽如芙蓉始出。观其釽，烂如列星之行；观其光，浑浑如水之溢于塘；观其断，岩岩如琐石；观其才，焕焕如冰释。『此所谓纯钧耶？』王曰：『是也。』」",
+      en: "\"Raised and shaken in the hand, its brilliance bursts like a lotus just blooming. Its ridgeline gleams like a procession of stars; its light swells like water overflowing a pool; its temper-lines are jagged as scattered stone; its substance glows like melting ice. 'Is this not Chun Jun?' The king said: 'It is.'\"",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-electric)", "var(--color-ink)", "var(--color-paper)"],
+    pattern: "blob",
+    glyph: "钧",
+    image: work09,
+  },
+  {
+    id: "zhihuannihong-10",
+    creatorId: "zhihuannihong",
+    category: "apparel",
+    name: { zh: "铸剑·轩辕", en: "Forging the Blade · Xuanyuan" },
+    tagline: {
+      zh: "「轩辕帝采首山之铜铸剑，以天文古字题铭其上。帝崩葬乔山，五百年后，山崩，室空，惟剑在焉。一旦，亦失去。」",
+      en: "\"The Yellow Emperor mined copper from Shou Mountain and cast a sword, inscribing it with ancient astronomical script. When the Emperor died he was buried at Qiao Mountain; five hundred years later the mountain collapsed and the chamber stood empty — only the sword remained. Then, one day, even that was gone.\"",
+    },
+    price: 0,
+    forSale: false,
+    colors: ["var(--color-orange)", "var(--color-ink)", "var(--color-paper)"],
+    pattern: "grid",
+    glyph: "轩",
+    image: work10,
   },
 ];

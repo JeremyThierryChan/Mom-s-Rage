@@ -22,8 +22,11 @@ import work04 from "./images/work_04.jpg";
 import work05 from "./images/work_05.jpg";
 import work06 from "./images/work_06.jpg";
 import work07 from "./images/work_07.jpg";
+import work08 from "./images/铸剑-干将莫邪.jpg";
+import work09 from "./images/铸剑-纯钧.jpg";
+import work10 from "./images/铸剑-轩辕.jpg";
 
-const workImages = [work01, work02, work03, work04, work05, work06, work07];
+const workImages = [work01, work02, work03, work04, work05, work06, work07, work08, work09, work10];
 
 const BG = "#080808";
 const FG = "rgba(245,240,232,0.9)";

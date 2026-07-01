@@ -13,7 +13,7 @@
  * SITE_URL / BASE_PATH in sync with src/lib/config.ts, and the name/
  * description below in sync with src/data/content.ts `meta`.
  */
-import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, statSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -28,7 +28,9 @@ function creatorIds() {
   return readdirSync(dir)
     .filter((name) => statSync(path.join(dir, name)).isDirectory())
     .map((name) => {
-      const src = readFileSync(path.join(dir, name, "index.ts"), "utf8");
+      const indexPath = path.join(dir, name, "index.ts");
+      if (!existsSync(indexPath)) return undefined; // staging folder, not a real creator yet
+      const src = readFileSync(indexPath, "utf8");
       return src.match(/id:\s*"([^"]+)"/)?.[1];
     })
     .filter(Boolean);

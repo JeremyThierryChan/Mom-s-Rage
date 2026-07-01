@@ -49,5 +49,6 @@ export const post: Post = {
       },
     },
   ],
-  author: "Mom's Rage",
+  author: "杰蒂陈",
+  authorId: "jtc",
 };
