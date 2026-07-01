@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Anton, Space_Grotesk, Space_Mono } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n";
 import { content } from "@/data/content";
+import { asset, SITE_URL } from "@/lib/config";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
 const anton = Anton({
@@ -25,13 +27,18 @@ const mono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: content.zh.meta.title,
   description: content.zh.meta.description,
   keywords: ["妈见打", "Mom's Rage", "艺术品牌", "原创IP", "泥塑", "小众艺术", "art brand"],
+  icons: { icon: asset("/og-image.jpeg") },
+  manifest: asset("/manifest.json"),
   openGraph: {
     title: content.zh.meta.title,
     description: content.zh.meta.description,
+    url: SITE_URL,
     type: "website",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 886, height: 886 }],
   },
 };
 

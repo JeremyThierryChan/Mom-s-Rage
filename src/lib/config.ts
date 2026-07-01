@@ -19,3 +19,25 @@ export function asset(path: string): string {
  * local storage so the UI is fully functional during the static-only phase.
  */
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
+
+/**
+ * Canonical production URL — used for sitemap.xml, robots.txt, and OG/canonical
+ * tags, which all need absolute URLs. Update this if the site moves to a custom
+ * domain (and simplify the helpers below once basePath goes away).
+ */
+export const SITE_ORIGIN = "https://jeremythierrychan.github.io";
+export const SITE_URL = `${SITE_ORIGIN}/Mom-s-Rage`;
+
+/** Absolute URL for a site route, e.g. absoluteUrl("/story/"). */
+export function absoluteUrl(path: string): string {
+  const clean = path.startsWith("/") ? path : `/${path}`;
+  return `${SITE_URL}${clean}`;
+}
+
+/**
+ * Absolute URL for a path that's already basePath-prefixed — i.e. the output of
+ * `asset()` or an imported image's `.src`. Do not pass it through `asset()` again.
+ */
+export function absoluteAssetUrl(prefixedSrc: string): string {
+  return `${SITE_ORIGIN}${prefixedSrc}`;
+}

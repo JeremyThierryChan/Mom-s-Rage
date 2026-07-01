@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { creators, getCreator, getCreatorPage } from "@/data/creators";
-import { content } from "@/data/content";
+import { absoluteAssetUrl } from "@/lib/config";
+import { pageMetadata } from "@/lib/seo";
 import { CreatorDetail } from "@/components/CreatorDetail";
 
 // Pre-render one static page per creator (required for `output: export`).
@@ -18,10 +19,12 @@ export async function generateMetadata({
   const creator = getCreator(id);
   if (!creator) return {};
   const name = `${creator.name.zh} ${creator.name.en}`;
-  return {
-    title: `${name} — ${content.zh.meta.title}`,
+  return pageMetadata({
+    title: name,
     description: creator.bio.zh,
-  };
+    path: `/creators/${creator.id}/`,
+    image: creator.avatar ? absoluteAssetUrl(creator.avatar.src) : undefined,
+  });
 }
 
 export default async function CreatorPage({

@@ -22,7 +22,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: basePath || undefined,
-  assetPrefix: basePath ? `${basePath}/` : undefined,
+  assetPrefix: basePath || undefined,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 
@@ -33,12 +34,12 @@ export function Partners() {
         </div>
 
         <Reveal delay={0.15}>
-          <a
+          <Link
             href="/contact"
             className="mt-12 inline-block bg-acid px-8 py-4 font-mono text-sm font-bold uppercase tracking-wider text-ink shadow-hard transition-transform hover:-translate-y-1"
           >
             {p.cta} →
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>

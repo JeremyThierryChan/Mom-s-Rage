@@ -1,4 +1,5 @@
 import type { Creator, Work } from "../_types";
+import avatarImg from "./images/avatar.jpg";
 import work01 from "./images/work_01.jpg";
 import work02 from "./images/work_02.jpg";
 import work03 from "./images/work_03.jpg";
@@ -17,6 +18,7 @@ export const creator: Creator = {
   },
   accent: "var(--color-electric)",
   glyph: "语",
+  avatar: avatarImg,
 };
 
 export const works: Work[] = [

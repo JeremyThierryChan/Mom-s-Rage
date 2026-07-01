@@ -28,6 +28,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# generated at build time — see scripts/generate-seo.mjs
+/public/sitemap.xml
+/public/robots.txt
+/public/manifest.json
+
 # editor
 .vscode/*
 !.vscode/extensions.json

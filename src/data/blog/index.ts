@@ -13,7 +13,9 @@
 
 import type { StaticImageData } from "next/image";
 
-import { post as welcome } from "./posts/001-welcome";
+import { post as welcome }     from "./posts/001-welcome";
+import { post as website }     from "./posts/002-website";
+import { post as whitepaper }  from "./posts/003-whitepaper";
 
 export type Bilingual = { zh: string; en: string };
 
@@ -36,6 +38,8 @@ export type Post = {
 // ── Post registry (newest first) ─────────────────────────────────────────────
 export const posts: Post[] = [
   welcome,
+  website,
+  whitepaper,
 ];
 
 export function getPost(slug: string): Post | undefined {

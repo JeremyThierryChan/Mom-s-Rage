@@ -15,6 +15,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 
+import avatarImg from "./images/avatar.jpg";
 import work01 from "./images/work_01.jpg";
 import work02 from "./images/work_02.jpg";
 import work03 from "./images/work_03.jpg";
@@ -97,12 +98,12 @@ export default function ZhiyuPage({ id: _id }: { id: string }) {
 
           <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              {/* Glyph avatar */}
+              {/* Avatar */}
               <div
-                className="mb-6 flex h-20 w-20 items-center justify-center border-2 border-ink font-display text-5xl"
-                style={{ color: ELECTRIC, borderColor: ELECTRIC }}
+                className="relative mb-6 h-24 w-24 overflow-hidden rounded-full border-2"
+                style={{ borderColor: ELECTRIC }}
               >
-                {creator.glyph}
+                <Image src={avatarImg} alt={creator.name["zh"]} fill className="object-cover" priority />
               </div>
 
               <h1
