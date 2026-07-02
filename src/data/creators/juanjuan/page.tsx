@@ -9,6 +9,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { creator, works } from ".";
 import { WorkArt } from "@/components/WorkArt";
@@ -20,9 +21,70 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
   const { t, lang } = useLang();
   const c = t.creators;
   const forSale = works.filter((w) => w.forSale);
+  const [lightbox, setLightbox] = useState<{ work: number; img: number } | null>(null);
+
+  const galleryFor = (workIndex: number) => {
+    const w = works[workIndex];
+    return w?.images ?? (w?.image ? [w.image] : []);
+  };
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      const gallery = galleryFor(lightbox.work);
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowRight") setLightbox((s) => s && { ...s, img: Math.min(s.img + 1, gallery.length - 1) });
+      if (e.key === "ArrowLeft") setLightbox((s) => s && { ...s, img: Math.max(s.img - 1, 0) });
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lightbox]);
 
   return (
     <>
+      {/* Work gallery lightbox */}
+      {lightbox !== null && (() => {
+        const gallery = galleryFor(lightbox.work);
+        const img = gallery[lightbox.img];
+        const work = works[lightbox.work];
+        if (!img || !work) return null;
+        return (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <Image
+              src={img}
+              alt={work.name[lang]}
+              width={img.width}
+              height={img.height}
+              style={{ maxHeight: "90vh", maxWidth: "90vw", width: "auto", height: "auto" }}
+              onClick={(e) => e.stopPropagation()}
+            />
+            {lightbox.img > 0 && (
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-3xl text-white/40 hover:text-white"
+                onClick={(e) => { e.stopPropagation(); setLightbox((s) => s && { ...s, img: s.img - 1 }); }}
+              >‹</button>
+            )}
+            {lightbox.img < gallery.length - 1 && (
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 font-mono text-3xl text-white/40 hover:text-white"
+                onClick={(e) => { e.stopPropagation(); setLightbox((s) => s && { ...s, img: s.img + 1 }); }}
+              >›</button>
+            )}
+            <button
+              className="absolute right-4 top-4 font-mono text-sm text-white/40 hover:text-white"
+              onClick={() => setLightbox(null)}
+            >✕</button>
+            <p className="absolute bottom-4 font-mono text-xs text-white/30">
+              {work.name[lang]} · {lightbox.img + 1} / {gallery.length}
+            </p>
+          </div>
+        );
+      })()}
+
       <Nav subpage />
       <main className="bg-ink text-paper">
 
@@ -183,10 +245,34 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
             </Reveal>
 
             <div className="grid gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-3">
-              {works.map((work, i) => (
+              {works.map((work, i) => {
+                const cover = work.images?.[0] ?? work.image;
+                return (
                 <Reveal key={work.id} delay={i * 0.07}>
                   <div className="group bg-ink p-1 transition-colors hover:bg-paper/5">
-                    <WorkArt work={work} />
+                    {cover ? (
+                      <button
+                        type="button"
+                        className="relative aspect-square w-full cursor-zoom-in overflow-hidden"
+                        onClick={() => setLightbox({ work: i, img: 0 })}
+                        aria-label={`查看${work.name[lang]}的全部图片`}
+                      >
+                        <Image
+                          src={cover}
+                          alt={work.name[lang]}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {work.images && work.images.length > 1 && (
+                          <span className="absolute bottom-2 right-2 bg-ink/70 px-2 py-0.5 font-mono text-[0.6rem] text-paper">
+                            ↗ 查看全部 {work.images.length} 张
+                          </span>
+                        )}
+                      </button>
+                    ) : (
+                      <WorkArt work={work} />
+                    )}
                     <div className="p-5">
                       <p className="kicker" style={{ color: creator.accent }}>
                         {t.works.categories[work.category]}
@@ -217,7 +303,8 @@ export default function MonolithPortraitPage({ id: _id }: { id: string }) {
                     </div>
                   </div>
                 </Reveal>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
